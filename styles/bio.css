@@ -1,12 +1,1 @@
-body {
-  box-sizing: border-box;
-  font-size: 16px;
-  margin: 0;
-  padding: 0;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}/*# sourceMappingURL=bio.css.map */
+@font-face{font-family:"AvenirNextLTPro";src:url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"),url("../../assets/fonts/alternative-files/AvenirNextLTPro.ttf") format("truetype");font-weight:400;font-style:normal}@font-face{font-family:"AvenirNextLTPro";src:url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype"),url("../../assets/fonts/alternative-files/AvenirNextLTProDemi.ttf") format("truetype");font-weight:600;font-style:normal}@font-face{font-family:"AvenirNextLTPro";src:url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype"),url("../../assets/fonts/alternative-files/AvenirNextLTProBold.ttf") format("truetype");font-weight:700;font-style:normal}html{box-sizing:border-box;font-size:16px;font-family:"AvenirNextLTPro",Verdana,Geneva,Tahoma,sans-serif}body{margin:0;padding:0;background-color:#fff}*,*::before,*::after{box-sizing:inherit}h1{margin:0;padding:0}@media(min-width: 320px){h1{font-size:24px;height:32px;font-weight:700}}@media(min-width: 768px){h1{font-size:60px;height:68px;font-weight:700}}h2{margin:0;padding:0}@media(min-width: 320px){h2{font-size:24px;height:32px;font-weight:700}}@media(min-width: 768px){h2{font-size:36px;height:44px;font-weight:700}}@media(min-width: 320px){h3{font-size:14px;height:22px;font-weight:600}}@media(min-width: 768px){h3{font-size:24px;height:32px;font-weight:600}}@media(min-width: 320px){body{font-size:13px;height:18px;font-weight:400}}@media(min-width: 768px){body{font-size:14px;height:22px;font-weight:400}}@media(min-width: 320px){footer{font-size:13px;height:18px;font-weight:400}}@media(min-width: 768px){footer{font-size:14px;height:20px;font-weight:400}}@media(min-width: 320px){label,button{font-size:110px;height:20px;font-weight:700}}@media(min-width: 768px){label,button{font-size:12px;height:20px;font-weight:700}}.header{background-color:#323232;color:#fff}ul{margin:0;padding:0}.about__image{height:200px;background-position:center;background-size:cover}.gallery{background-color:#fafafa}.gallery__image{height:200px}.footer{background-color:#323232;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content;color:#fff}.hero{background-image:url("../assets/images/hero-bio.jpg")}@media(min-width: 320px){.hero{height:200px;background-position:center;background-size:cover}}.hero__title{color:#fff}/*# sourceMappingURL=bio.css.map */

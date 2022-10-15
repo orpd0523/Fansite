@@ -1,12 +1,51 @@
-body {
-    box-sizing: border-box;
-    font-size: 16px;
+@forward "partials/core";
+@forward "partials/typography";
+@use "partials/colors";
+@use "partials/responsive";
+
+.header {
+    background-color: colors.$primary-black;
+    color: colors.$primary-white;
+}
+
+ul{
     margin: 0;
     padding: 0;
-  }
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
+}
+
+.about__image {
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.gallery {
+    background-color: colors.$secondary-white;
+
+    &__image {
+        height: 200px;
+    }
+}
+
+.footer {
+    background-color: colors.$primary-black;
+    height: fit-content;
+    color: colors.$primary-white;
+}
+
+.hero {
+    background-image: url("../assets/images/hero-bio.jpg");
+
+    @include responsive.mobile{
+        height: 200px;
+        background-position: center;
+        background-size: cover;
+    }
+    
+    &__title {
+        color: colors.$primary-white;
+    }
+}
+    
+

@@ -5,32 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Band Site</title>
+    <link rel="stylesheet" href="./styles/bio.css" />
   </head>
   <body>
     <!--Navigation Header-->
-    <header>
-      <nav>
-        <h2>BANDSITE</h2>
-        <ul>
-          <li>
-            <a>Biography</a>
+    <header class="header">
+      <nav class="header__nav">
+        <h2 class="header__logo">BANDSITE</h2>
+        <ul class="header__list">
+          <li class="header__item">
+            <a class="header__link header__link--selected">Biography</a>
           </li>
-          <li>
-            <a>Shows</a>
+          <li class="header__item">
+            <a class="header__link">Shows</a>
           </li>
         </ul>
       </nav>
     </header>
     <!--Hero Section-->
     <main>
-      <section>
-        <h1>The Bees Knees</h1>
-        <img alt="#" src="#" />
+      <section class="hero">
+        <h1 class="hero__title">The Bees Knees</h1>
       </section>
       <!--About Section-->
       <section>
         <h2>About the Musicians</h2>
-        <img alt="#" src="#" />
+        <img class="about__image" alt="band-image" src="./assets/images/band.jpg">
         <q>
           We push each other to be the best. It&apos;s not uncommon for one of
           us to say 'this needs to be better, back to the drawing board'
@@ -60,30 +60,30 @@
         </p>
       </section>
       <!--Photo Gallery-->
-      <section>
+      <section class="gallery" >
         <h2>Photo Gallery</h2>
-        <div>
-          <img alt="#" src="#" />
-          <img alt="#" src="#" />
-          <img alt="#" src="#" />
-          <img alt="#" src="#" />
-          <img alt="#" src="#" />
-          <img alt="#" src="#" />
-          <img alt="#" src="#" />
-          <img alt="#" src="#" />
-          <img alt="#" src="#" />
+        <div class="gallery__images">
+        <img class="gallery__image" src="./assets/images/Photo-gallery-1.jpg" alt="Concert lights and crowd">
+        <img class="gallery__image" src="./assets/images/Photo-gallery-2.jpg" alt="Women at concert">
+        <img class="gallery__image" src="./assets/images/Photo-gallery-3.jpg" alt="Hands up in concert crowd">
+        <img class="gallery__image" src="./assets/images/Photo-gallery-4.jpg" alt="Concert lights and woman">
+        <img class="gallery__image" src="./assets/images/Photo-gallery-5.jpg" alt="Concert colorful confetti">
+        <img class="gallery__image" src="./assets/images/Photo-gallery-6.jpg" alt="Concert main singer">
+        <img class="gallery__image" src="./assets/images/Photo-gallery-7.jpg" alt="Concert stage and crowd view">
+        <img class="gallery__image" src="./assets/images/Photo-gallery-8.jpg" alt="Dj turntable">
+        <img class="gallery__image" src="./assets/images/Photo-gallery-9.jpg" alt="Concert white confetti">
         </div>
       </section>
     </main>
     <!--Navigation Footer-->
-    <footer>
+    <footer class="footer">
       <div>
         <div>
           <div>
             <h2>Get in Touch</h2>
-            <img alt="#" src="#" />
-            <img alt="#" src="#" />
-            <img alt="#" src="#" />
+            <img class= "footer__icon" alt="Instagram Logo" src="./assets/icons/Icon-instagram.svg" />
+            <img class= "footer__icon" alt="Facebook Logo" src="./assets/icons/Icon-facebook.svg" />
+            <img class= "footer__icon" alt="Twitter Logo" src="./assets/icons/Icon-twitter.svg" />
           </div>
           <div>
             <h3>Cam Adams</h3>
@@ -104,15 +104,9 @@
             <a>cwhyte@archentertainment.com</a>
           </div>
         </div>
-
-        <div>
           <h2>BANDSITE</h2>
-        </div>
       </div>
-
-      <div>
         <p>Copyright The Bees Knees &#169; 2021 All Rights Reserved</p>
-      </div>
     </footer>
   </body>
 </html>
