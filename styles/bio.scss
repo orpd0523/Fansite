@@ -3,22 +3,102 @@
 @use "partials/colors";
 @use "partials/responsive";
 
+.hero {
+    background-image: linear-gradient(colors.$primary-black-op, colors.$primary-black-op ),url("../assets/images/hero-bio.jpg");
+    display:flex;
+    align-items:center;
+
+    @include responsive.mobile{
+        height: 225px;
+        background-position: center;
+        background-size: cover;
+    }
+    
+    &__title {
+        color: colors.$primary-white;
+        margin-left: 0.5em;
+        font-weight: 600;
+    }
+
+}
 .header {
     background-color: colors.$primary-black;
     color: colors.$primary-white;
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    &__image {
+        height: fit-content;
+        margin: 1em auto;
+
+    }
+        
+    &__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+    }
+
+        &__item {
+            margin-bottom: 1em;
+            flex-grow: 1;
+            text-align: center;
+        }
+
 }
 
-ul{
-    margin: 0;
-    padding: 0;
+@mixin about-text {
+    font-weight: 600;
+    font-size: .90rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.about__image {
+
+.about {
+    padding-top: 1em;
+
+    &__image {
     height: 200px;
-    background-position: center;
-    background-size: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+
 }
 
+    &__title {
+        font-weight: 600;
+        margin: .25em .5em;
+    }
+
+    &__quote {
+        @include about-text;
+        padding: 1em 1em .25em;
+    }
+
+    &__cite {
+        @include about-text;
+        font-style: normal;
+        padding: 0 1em;
+        margin-top: 0;
+    }
+
+    &__section-header, &__article-p {
+        margin: 1rem;
+        font-weight: 500;
+
+    }
+}
 
 .gallery {
     background-color: colors.$secondary-white;
@@ -34,18 +114,6 @@ ul{
     color: colors.$primary-white;
 }
 
-.hero {
-    background-image: url("../assets/images/hero-bio.jpg");
 
-    @include responsive.mobile{
-        height: 200px;
-        background-position: center;
-        background-size: cover;
-    }
-    
-    &__title {
-        color: colors.$primary-white;
-    }
-}
     
 
