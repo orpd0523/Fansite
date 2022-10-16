@@ -11,12 +11,9 @@
     url("../assets/images/hero-bio.jpg");
   display: flex;
   align-items: center;
-
-  @include responsive.mobile {
-    height: 225px;
-    background-position: center;
-    background-size: cover;
-  }
+  height: 60vw;
+  background-position: center;
+  background-size: cover;
 
   &__title {
     color: colors.$primary-white;
@@ -30,21 +27,42 @@
 
   &__nav {
     display: flex;
-    flex-direction: column;
+
+    @include responsive.mobile {
+      flex-direction: column;
+    }
+
+    @include responsive.tablet {
+      flex-direction: row;
+    }
   }
 
   &__image {
     height: fit-content;
-    margin: 1em auto;
+    @include responsive.mobile {
+      margin: 1em auto;
+    }
+
+    @include responsive.tablet {
+      margin: 1.5em 2em;
+    }
   }
 
   &__list {
+    list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+
+    @include responsive.mobile {
+      margin: 0;
+      padding: 0;
+    }
+
+    @include responsive.tablet {
+      margin: auto 0;
+      padding: auto;
+    }
   }
 
   &__item {
@@ -52,9 +70,15 @@
     flex-grow: 1;
     text-align: center;
 
-    &--selected{
-        border-bottom: 4px solid colors.$primary-white;
+    @include responsive.tablet {
+      padding-top: 1.5em;
+      padding-bottom: 1.5em;
+      margin-left: 1em;
+      margin-right: 2em;
+    }
 
+    &--selected {
+      border-bottom: 4px solid colors.$primary-white;
     }
   }
 }
@@ -68,11 +92,12 @@
 }
 
 @mixin image {
-  height: 200px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: auto;
+  max-width: 95vw;
+  height: auto;
 }
 
 @mixin title {
@@ -85,17 +110,28 @@
 
   &__image {
     @include image;
+    @include responsive.tablet {
+      height: 60vw;
+      width: 75vw;
+    }
   }
 
   &__title {
     @include title;
     font-weight: 600;
     margin: 0.25em 0.5em;
+    font-size: 6vw;
   }
 
   &__quote {
     @include about-text;
     padding: 1em 1em 0.25em;
+    font-size: 4.5vw;
+
+    @include responsive.tablet {
+      font-size: 3vw;
+      padding: 1em 3.8em 0.25em;
+    }
   }
 
   &__cite {
@@ -103,6 +139,12 @@
     font-style: normal;
     padding: 0 1em;
     margin-top: 0;
+    font-size: 4.5vw;
+
+    @include responsive.tablet {
+      font-size: 2.5vw;
+      padding: 1em 4.5em 0.25em;
+    }
   }
 
   &__section-header,
@@ -110,23 +152,72 @@
     margin: 1rem;
     font-weight: 500;
   }
+
+  &__section-header {
+    font-weight: 600;
+    font-size: 4.5vw;
+
+    @include responsive.tablet {
+      font-size: 3vw;
+      padding: 1em 3em 1em;
+    }
+  }
+
+  &__article-p {
+    font-size: 4.5vw;
+
+    @include responsive.tablet {
+      display: inline-block;
+      max-width: 35vw;
+      font-size: 0.9rem;
+    }
+
+    &--left {
+      @include responsive.tablet {
+        margin-left: 6em;
+      }
+    }
+  }
 }
 
 .gallery {
   background-color: colors.$secondary-white;
   padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+
+  &__images {
+    display: flex;
+    margin-bottom: 1em;
+    flex-wrap:wrap;
+
+    @include responsive.mobile {
+      flex-direction: column;
+      gap: 1em;
+    }
+
+    @include responsive.tablet {
+      flex-direction: row;
+      gap: 1em;
+    }
+  }
 
   &__image {
     @include image;
-    max-width: 95vw;
-    height: auto;
-    padding: 0.5em;
-    margin-bottom: 0.5em;
+
+    @include responsive.tablet {
+      max-width: 30vw;
+    }
   }
 
   &__title {
-    @include title;
+    font-weight: 600;
+
+    @include responsive.tablet {
+        margin-top: .5em;
+        margin-bottom: .25em;
   }
+}
 }
 
 .footer {

@@ -2,17 +2,15 @@
 
 h1 {
   margin: 0;
-    padding: 0;
+  padding: 0;
+  font-weight: 700;
+  font-size: 8vw;
   @include responsive.mobile {
-    font-size: 24px;
     height: 32px;
-    font-weight: 700;
   }
 
   @include responsive.tablet {
-    font-size: 60px;
     height: 68px;
-    font-weight: 700;
   }
 }
 
