@@ -114,6 +114,11 @@
       height: 60vw;
       width: 75vw;
     }
+
+    @include responsive.desktop {
+     max-width: 65em;
+     max-height: 40em;   
+    }
   }
 
   &__title {
@@ -121,6 +126,11 @@
     font-weight: 600;
     margin: 0.25em 0.5em;
     font-size: 6vw;
+
+    @include responsive.desktop {
+        font-size: 4em;
+        padding-left: 3rem;
+    }
   }
 
   &__quote {
@@ -131,6 +141,11 @@
     @include responsive.tablet {
       font-size: 3vw;
       padding: 1em 3.8em 0.25em;
+    }
+
+    @include responsive.desktop {
+     font-size: 2em;
+     padding-left: 6.5em;
     }
   }
 
@@ -145,6 +160,11 @@
       font-size: 2.5vw;
       padding: 1em 4.5em 0.25em;
     }
+
+    @include responsive.desktop {
+        font-size: 2em;
+        padding-left: 6.5em;
+       }
   }
 
   &__section-header,
@@ -161,6 +181,11 @@
       font-size: 3vw;
       padding: 1em 3em 1em;
     }
+
+    @include responsive.desktop {
+        font-size: 2em;
+        padding-left: 6em;
+       }
   }
 
   &__article-p {
@@ -186,10 +211,16 @@
   padding-left: 1em;
   padding-right: 1em;
 
+  @include responsive.desktop {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    background-color: colors.$secondary-white;
+}
+
   &__images {
     display: flex;
     margin-bottom: 1em;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 
     @include responsive.mobile {
       flex-direction: column;
@@ -208,16 +239,20 @@
     @include responsive.tablet {
       max-width: 30vw;
     }
+
+    @include responsive.desktop {
+        max-width: 29vw;
+  }
   }
 
   &__title {
     font-weight: 600;
 
     @include responsive.tablet {
-        margin-top: .5em;
-        margin-bottom: .25em;
+      margin-top: 0.5em;
+      margin-bottom: 0.25em;
+    }
   }
-}
 }
 
 .footer {
@@ -228,51 +263,142 @@
   margin-left: auto;
   margin-right: auto;
 
+  
+  @include responsive.tablet {
+    position: relative;
+  }
+
   &__title {
     font-weight: 600;
     margin-top: 0.5em;
+
+    @include responsive.tablet {
+      display: inline-block;
+      margin-right: 1em;
+    }
+
+    @include responsive.desktop {
+        margin-left: 3rem;
+  }
   }
 
+  &__contacts {
+    @include responsive.tablet {
+      display: flex;
+      flex-direction: row;
+      gap: 5rem;
+    }
+  }
   &__icon {
     margin-top: 1em;
 
     &--center {
       margin: auto 1.5em;
     }
+
+    @include responsive.desktop {
+        margin-left: 3rem;
+  }
+  }
+
+  &__social {
+    text-decoration: none;
   }
 
   &__person {
     font-weight: 600;
     padding: 0;
     margin-bottom: 0;
+
+    @include responsive.tablet {
+        font-size: .75rem;
+        padding-bottom: 0;
+    height: 1rem;
+    }
+
+    @include responsive.desktop {
+        margin-left: 3rem;
+  }
   }
 
   &__organization {
     margin: 0;
     padding: 0;
+
+    @include responsive.tablet {
+        font-size: .75rem;
+        padding-top: 0;
+    }
+
+    @include responsive.desktop {
+        margin-left: 3rem;
+  }
   }
 
   &__location {
     margin-bottom: 0;
+
+    @include responsive.tablet {
+        font-size: .75rem;
+    }
+
+    @include responsive.desktop {
+        margin-left: 3rem;
+  }
   }
 
   &__location-continue {
     margin-top: 0;
+
+    @include responsive.tablet {
+        font-size: .75rem;
+    }
+
+    @include responsive.desktop {
+        margin-left: 3rem;
+  }
   }
 
   &__email {
     display: block;
     padding-top: 0.5em;
     padding-bottom: 1em;
+
+    @include responsive.tablet {
+        font-size: .75rem;
+    }
+
+    @include responsive.desktop {
+        margin-left: 3rem;
+  }
   }
 
   &__image {
     display: block;
     height: fit-content;
     margin: 4em auto 1em;
+
+    @include responsive.tablet {
+        position: absolute;
+        top: -1rem;
+        right: 4rem;
+    }
+
+    @include responsive.desktop {
+        right: 6rem;
+  }
   }
 
   &__copyright {
     font-size: 0.7rem;
+
+    
+    @include responsive.tablet {
+        margin-top: 2em;
+    }
+
+    @include responsive.desktop {
+        margin-left: 3rem;
+  }
   }
 }
