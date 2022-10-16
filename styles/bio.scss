@@ -4,116 +4,184 @@
 @use "partials/responsive";
 
 .hero {
-    background-image: linear-gradient(colors.$primary-black-op, colors.$primary-black-op ),url("../assets/images/hero-bio.jpg");
-    display:flex;
-    align-items:center;
+  background-image: linear-gradient(
+      colors.$primary-black-op,
+      colors.$primary-black-op
+    ),
+    url("../assets/images/hero-bio.jpg");
+  display: flex;
+  align-items: center;
 
-    @include responsive.mobile{
-        height: 225px;
-        background-position: center;
-        background-size: cover;
-    }
-    
-    &__title {
-        color: colors.$primary-white;
-        margin-left: 0.5em;
-        font-weight: 600;
-    }
+  @include responsive.mobile {
+    height: 225px;
+    background-position: center;
+    background-size: cover;
+  }
 
+  &__title {
+    color: colors.$primary-white;
+    margin-left: 0.5em;
+    font-weight: 600;
+  }
 }
 .header {
-    background-color: colors.$primary-black;
-    color: colors.$primary-white;
+  background-color: colors.$primary-black;
+  color: colors.$primary-white;
 
-    &__nav {
-        display: flex;
-        flex-direction: column;
+  &__nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__image {
+    height: fit-content;
+    margin: 1em auto;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    padding-bottom: 1em;
+    flex-grow: 1;
+    text-align: center;
+
+    &--selected{
+        border-bottom: 4px solid colors.$primary-white;
 
     }
-
-    &__image {
-        height: fit-content;
-        margin: 1em auto;
-
-    }
-        
-    &__list {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-
-    }
-
-        &__item {
-            margin-bottom: 1em;
-            flex-grow: 1;
-            text-align: center;
-        }
-
+  }
 }
 
 @mixin about-text {
-    font-weight: 600;
-    font-size: .90rem;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+@mixin image {
+  height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+
+@mixin title {
+  font-weight: 600;
+  margin: 0.25em 0.5em;
+}
 
 .about {
-    padding-top: 1em;
+  padding-top: 1em;
 
-    &__image {
-    height: 200px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: auto;
+  &__image {
+    @include image;
+  }
 
-}
+  &__title {
+    @include title;
+    font-weight: 600;
+    margin: 0.25em 0.5em;
+  }
 
-    &__title {
-        font-weight: 600;
-        margin: .25em .5em;
-    }
+  &__quote {
+    @include about-text;
+    padding: 1em 1em 0.25em;
+  }
 
-    &__quote {
-        @include about-text;
-        padding: 1em 1em .25em;
-    }
+  &__cite {
+    @include about-text;
+    font-style: normal;
+    padding: 0 1em;
+    margin-top: 0;
+  }
 
-    &__cite {
-        @include about-text;
-        font-style: normal;
-        padding: 0 1em;
-        margin-top: 0;
-    }
-
-    &__section-header, &__article-p {
-        margin: 1rem;
-        font-weight: 500;
-
-    }
+  &__section-header,
+  &__article-p {
+    margin: 1rem;
+    font-weight: 500;
+  }
 }
 
 .gallery {
-    background-color: colors.$secondary-white;
+  background-color: colors.$secondary-white;
+  padding-top: 1em;
 
-    &__image {
-        height: 200px;
-    }
+  &__image {
+    @include image;
+    max-width: 95vw;
+    height: auto;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  &__title {
+    @include title;
+  }
 }
 
 .footer {
-    background-color: colors.$primary-black;
+  background-color: colors.$primary-black;
+  height: fit-content;
+  color: colors.$primary-white;
+  padding: 1em;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__title {
+    font-weight: 600;
+    margin-top: 0.5em;
+  }
+
+  &__icon {
+    margin-top: 1em;
+
+    &--center {
+      margin: auto 1.5em;
+    }
+  }
+
+  &__person {
+    font-weight: 600;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  &__organization {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__location {
+    margin-bottom: 0;
+  }
+
+  &__location-continue {
+    margin-top: 0;
+  }
+
+  &__email {
+    display: block;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+  }
+
+  &__image {
+    display: block;
     height: fit-content;
-    color: colors.$primary-white;
+    margin: 4em auto 1em;
+  }
+
+  &__copyright {
+    font-size: 0.7rem;
+  }
 }
-
-
-    
-
