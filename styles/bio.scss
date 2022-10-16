@@ -15,10 +15,19 @@
   background-position: center;
   background-size: cover;
 
+  @include responsive.desktop {
+    max-height: 50em;
+}
+
   &__title {
     color: colors.$primary-white;
     margin-left: 0.5em;
     font-weight: 600;
+
+    @include responsive.desktop {
+        font-size: 4em;
+        margin-left: 2em;
+    }
   }
 }
 .header {
@@ -34,6 +43,10 @@
 
     @include responsive.tablet {
       flex-direction: row;
+    }
+
+    @include responsive.desktop {
+        margin-left: 6em;
     }
   }
 
@@ -130,6 +143,7 @@
     @include responsive.desktop {
         font-size: 4em;
         padding-left: 3rem;
+        margin: 1em;
     }
   }
 
@@ -145,7 +159,8 @@
 
     @include responsive.desktop {
      font-size: 2em;
-     padding-left: 6.5em;
+     max-width: 38em;
+     margin-left: 3em;
     }
   }
 
@@ -184,7 +199,7 @@
 
     @include responsive.desktop {
         font-size: 2em;
-        padding-left: 6em;
+        padding-left: 6.5em;
        }
   }
 
@@ -197,11 +212,21 @@
       font-size: 0.9rem;
     }
 
+    @include responsive.desktop {
+        font-size: 1em;
+       }
+
     &--left {
       @include responsive.tablet {
         margin-left: 6em;
       }
+
+      @include responsive.desktop {
+        margin-left: 14em;
+       }
     }
+
+    
   }
 }
 
