@@ -1,0 +1,425 @@
+@forward "partials/core";
+@forward "partials/typography";
+@use "partials/colors";
+@use "partials/responsive";
+
+.hero {
+  background-image: linear-gradient(
+      colors.$primary-black-op,
+      colors.$primary-black-op
+    ),
+    url("../assets/images/hero-bio.jpg");
+  display: flex;
+  align-items: center;
+  height: 60vw;
+  background-position: center;
+  background-size: cover;
+
+  @include responsive.desktop {
+    max-height: 50em;
+  }
+
+  &__title {
+    color: colors.$primary-white;
+    margin-left: 0.5em;
+    font-weight: 600;
+
+    @include responsive.desktop {
+      font-size: 4em;
+      margin-left: 2em;
+    }
+  }
+}
+.header {
+  background-color: colors.$primary-black;
+  color: colors.$primary-white;
+
+  &__nav {
+    display: flex;
+
+    @include responsive.mobile {
+      flex-direction: column;
+    }
+
+    @include responsive.tablet {
+      flex-direction: row;
+    }
+
+    @include responsive.desktop {
+      margin-left: 6em;
+    }
+  }
+
+  &__image {
+    height: fit-content;
+    @include responsive.mobile {
+      margin: 1em auto;
+    }
+
+    @include responsive.tablet {
+      margin: 1.5em 2em;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    @include responsive.mobile {
+      margin: 0;
+      padding: 0;
+    }
+
+    @include responsive.tablet {
+      margin: auto 0;
+      padding: auto;
+    }
+  }
+
+  &__item {
+    padding-bottom: 1em;
+    flex-grow: 1;
+    text-align: center;
+
+    @include responsive.tablet {
+      padding-top: 1.5em;
+      padding-bottom: 1.5em;
+      margin-left: 1em;
+      margin-right: 2em;
+    }
+
+    &--selected {
+      border-bottom: 4px solid colors.$primary-white;
+    }
+  }
+}
+
+@mixin about-text {
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  max-width: 95vw;
+  height: auto;
+}
+
+@mixin title {
+  font-weight: 600;
+  margin: 0.25em 0.5em;
+}
+
+.about {
+  padding-top: 1em;
+
+  &__image {
+    @include image;
+    @include responsive.tablet {
+      height: 60vw;
+      width: 75vw;
+    }
+
+    @include responsive.desktop {
+      max-width: 65em;
+      max-height: 40em;
+    }
+  }
+
+  &__title {
+    @include title;
+    font-weight: 600;
+    margin: 0.25em 0.5em;
+    font-size: 6vw;
+
+    @include responsive.desktop {
+      font-size: 4em;
+      padding-left: 3rem;
+      margin: 1em;
+    }
+  }
+
+  &__quote {
+    @include about-text;
+    padding: 1em 1em 0.25em;
+    font-size: 4.5vw;
+
+    @include responsive.tablet {
+      font-size: 3vw;
+      padding: 1em 3.8em 0.25em;
+    }
+
+    @include responsive.desktop {
+      font-size: 2em;
+      max-width: 38em;
+      margin-left: 3em;
+    }
+  }
+
+  &__cite {
+    @include about-text;
+    font-style: normal;
+    padding: 0 1em;
+    margin-top: 0;
+    font-size: 4.5vw;
+
+    @include responsive.tablet {
+      font-size: 2.5vw;
+      padding: 1em 4.5em 0.25em;
+    }
+
+    @include responsive.desktop {
+      font-size: 2em;
+      padding-left: 6.5em;
+    }
+  }
+
+  &__section-header,
+  &__article-p {
+    margin: 1rem;
+    font-weight: 500;
+  }
+
+  &__section-header {
+    font-weight: 600;
+    font-size: 4.5vw;
+
+    @include responsive.tablet {
+      font-size: 3vw;
+      padding: 1em 3em 1em;
+    }
+
+    @include responsive.desktop {
+      font-size: 2em;
+      padding-left: 6.5em;
+    }
+  }
+
+  &__article-p {
+    font-size: 4.5vw;
+
+    @include responsive.tablet {
+      display: inline-block;
+      max-width: 35vw;
+      font-size: 0.9rem;
+    }
+
+    @include responsive.desktop {
+      font-size: 1em;
+    }
+
+    &--left {
+      @include responsive.tablet {
+        margin-left: 6em;
+      }
+
+      @include responsive.desktop {
+        margin-left: 14em;
+      }
+    }
+  }
+}
+
+.gallery {
+  background-color: colors.$secondary-white;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+
+  @include responsive.desktop {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    background-color: colors.$secondary-white;
+  }
+
+  &__images {
+    display: flex;
+    margin-bottom: 1em;
+    flex-wrap: wrap;
+
+    @include responsive.mobile {
+      flex-direction: column;
+      gap: 1em;
+    }
+
+    @include responsive.tablet {
+      flex-direction: row;
+      gap: 1em;
+    }
+  }
+
+  &__image {
+    @include image;
+
+    @include responsive.tablet {
+      max-width: 30vw;
+    }
+
+    @include responsive.desktop {
+      max-width: 29vw;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+
+    @include responsive.tablet {
+      margin-top: 0.5em;
+      margin-bottom: 0.25em;
+    }
+  }
+}
+
+.footer {
+  background-color: colors.$primary-black;
+  height: fit-content;
+  color: colors.$primary-white;
+  padding: 1em;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include responsive.tablet {
+    position: relative;
+  }
+
+  &__title {
+    font-weight: 600;
+    margin-top: 0.5em;
+
+    @include responsive.tablet {
+      display: inline-block;
+      margin-right: 1em;
+    }
+
+    @include responsive.desktop {
+      margin-left: 3rem;
+    }
+  }
+
+  &__contacts {
+    @include responsive.tablet {
+      display: flex;
+      flex-direction: row;
+      gap: 5rem;
+    }
+  }
+  &__icon {
+    margin-top: 1em;
+
+    &--center {
+      margin: auto 1.5em;
+    }
+
+    @include responsive.desktop {
+      margin-left: 3rem;
+    }
+  }
+
+  &__social {
+    text-decoration: none;
+  }
+
+  &__person {
+    font-weight: 600;
+    padding: 0;
+    margin-bottom: 0;
+
+    @include responsive.tablet {
+      font-size: 0.75rem;
+      padding-bottom: 0;
+      height: 1rem;
+    }
+
+    @include responsive.desktop {
+      margin-left: 3rem;
+    }
+  }
+
+  &__organization {
+    margin: 0;
+    padding: 0;
+
+    @include responsive.tablet {
+      font-size: 0.75rem;
+      padding-top: 0;
+    }
+
+    @include responsive.desktop {
+      margin-left: 3rem;
+    }
+  }
+
+  &__location {
+    margin-bottom: 0;
+
+    @include responsive.tablet {
+      font-size: 0.75rem;
+    }
+
+    @include responsive.desktop {
+      margin-left: 3rem;
+    }
+  }
+
+  &__location-continue {
+    margin-top: 0;
+
+    @include responsive.tablet {
+      font-size: 0.75rem;
+    }
+
+    @include responsive.desktop {
+      margin-left: 3rem;
+    }
+  }
+
+  &__email {
+    display: block;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+
+    @include responsive.tablet {
+      font-size: 0.75rem;
+    }
+
+    @include responsive.desktop {
+      margin-left: 3rem;
+    }
+  }
+
+  &__image {
+    display: block;
+    height: fit-content;
+    margin: 4em auto 1em;
+
+    @include responsive.tablet {
+      position: absolute;
+      top: -1rem;
+      right: 4rem;
+    }
+
+    @include responsive.desktop {
+      right: 6rem;
+    }
+  }
+
+  &__copyright {
+    font-size: 0.7rem;
+
+    @include responsive.tablet {
+      margin-top: 2em;
+    }
+
+    @include responsive.desktop {
+      margin-left: 3rem;
+    }
+  }
+}
