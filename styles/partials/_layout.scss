@@ -1,6 +1,12 @@
 @use "colors";
 @use "responsive";
 
+
+%container {
+  max-width: responsive.$desktop-breakpoint;
+  margin: 0 auto;
+}
+
 .header {
     background-color: colors.$black;
     color: colors.$mercury;
@@ -8,8 +14,7 @@
     &__nav {
       display: flex;
       flex-direction: column;
-      max-width: responsive.$desktop-breakpoint;
-      margin: 0 auto;
+      @extend %container;
   
       @include responsive.tablet {
         flex-direction: row;
@@ -55,45 +60,41 @@
   
 .footer {
     background-color: colors.$black;
-    height: fit-content;
     color: colors.$white;
-    padding: 1em;
-    margin-left: auto;
-    margin-right: auto;
-  
-    @include responsive.tablet {
-      position: relative;
+    position: relative;
+    padding-bottom: .5rem;
+
+    &__container{
+      @extend %container;
+      padding: 1rem;
+
+      @include responsive.tablet {
+        padding: 2rem;
+      }
     }
   
     &__title {
-      margin-top: 0.5em;
-  
+      margin: .5rem 0;
       @include responsive.tablet {
         display: inline-block;
-        margin-right: 1em;
-      }
-  
-      @include responsive.desktop {
-        margin-left: 3rem;
+        margin-right: 2rem;
       }
     }
   
     &__contacts {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 1rem;
+      gap: .5rem;
+      
       @include responsive.tablet {
-        display: flex;
         flex-direction: row;
         gap: 5rem;
       }
     }
     &__icon {
-      margin-top: 1em;
-  
       &--center {
-        margin: auto 1.5em;
-      }
-  
-      @include responsive.desktop {
-        margin-left: 3rem;
+        margin: auto 2rem;
       }
     }
   
@@ -101,76 +102,38 @@
       text-decoration: none;
     }
   
-    &__person {
-      padding: 0;
+    &__person, &__location {
       margin-bottom: 0;
-  
-      @include responsive.desktop {
-        margin-left: 3rem;
-      }
     }
   
     &__organization {
       margin: 0;
-      padding: 0;
-  
-      @include responsive.desktop {
-        margin-left: 3rem;
-      }
-    }
-  
-    &__location {
-      margin-bottom: 0;
-  
-      @include responsive.desktop {
-        margin-left: 3rem;
-      }
     }
   
     &__location-continue {
       margin-top: 0;
-  
-      @include responsive.desktop {
-        margin-left: 3rem;
-      }
     }
   
     &__email {
       color: colors.$white;
-      display: block;
-      padding-top: 0.5em;
-      padding-bottom: 1em;
-  
-      @include responsive.desktop {
-        margin-left: 3rem;
-      }
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
     }
   
     &__image {
       display: block;
-      height: fit-content;
-      margin: 4em auto 1em;
-  
+      padding: 1rem 1rem .5rem;
       @include responsive.tablet {
         position: absolute;
-        top: -1rem;
-        right: 4rem;
-      }
-  
-      @include responsive.desktop {
-        right: 6rem;
+        top: 2rem;
+        right: 1rem;
       }
     }
   
     &__copyright {
-      font-size: 0.7rem;
-  
+      margin: .5rem 1rem 1rem;
       @include responsive.tablet {
-        margin-top: 2em;
-      }
-  
-      @include responsive.desktop {
-        margin-left: 3rem;
+        margin: 1rem 2rem;
       }
     }
   }
