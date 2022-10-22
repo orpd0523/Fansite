@@ -2,8 +2,8 @@
 @use "responsive";
 
 .header {
-    background-color: colors.$primary-black;
-    color: colors.$primary-white;
+    background-color: colors.$black;
+    color: colors.$white;
   
     &__nav {
       display: flex;
@@ -62,7 +62,7 @@
       }
   
       &--selected {
-        border-bottom: 4px solid colors.$primary-white;
+        border-bottom: 4px solid colors.$white;
       }
     }
   }
@@ -73,9 +73,9 @@
 
   
 .footer {
-    background-color: colors.$primary-black;
+    background-color: colors.$black;
     height: fit-content;
-    color: colors.$primary-white;
+    color: colors.$white;
     padding: 1em;
     margin-left: auto;
     margin-right: auto;
@@ -176,7 +176,7 @@
     }
   
     &__email {
-      color: colors.$primary-white;
+      color: colors.$white;
       display: block;
       padding-top: 0.5em;
       padding-bottom: 1em;
