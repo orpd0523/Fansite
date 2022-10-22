@@ -3,32 +3,26 @@
 
 .header {
     background-color: colors.$black;
-    color: colors.$white;
-  
+    color: colors.$mercury;
+
     &__nav {
       display: flex;
-  
-      @include responsive.mobile {
-        flex-direction: column;
-      }
+      flex-direction: column;
+      max-width: responsive.$desktop-breakpoint;
+      margin: 0 auto;
   
       @include responsive.tablet {
         flex-direction: row;
-      }
-  
-      @include responsive.desktop {
-        margin-left: 6em;
+        padding: 0 2.25rem;
+        gap: 2rem;
       }
     }
   
     &__image {
-      height: fit-content;
-      @include responsive.mobile {
-        margin: 1em auto;
-      }
+      margin: .5rem auto;
   
       @include responsive.tablet {
-        margin: 1.5em 2em;
+        margin: 1.5rem 0 ;
       }
     }
   
@@ -37,40 +31,27 @@
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
-  
-      @include responsive.mobile {
-        margin: 0;
-        padding: 0;
-      }
-  
-      @include responsive.tablet {
-        margin: auto 0;
-        padding: auto;
-      }
+      margin: 0;
+      padding: 0;
+      gap: 1rem;
     }
   
     &__item {
-      padding-bottom: 1em;
       flex-grow: 1;
-      text-align: center;
-  
-      @include responsive.tablet {
-        padding-top: 1.5em;
-        padding-bottom: 1.5em;
-        margin-left: 1em;
-        margin-right: 2em;
-      }
-  
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       &--selected {
-        border-bottom: 4px solid colors.$white;
+        color: colors.$white;
+        border-bottom: .25rem solid colors.$white;
       }
     }
+
+    &__link {
+      margin: .5rem auto;
+    }
   }
-  
-
-  
-  
-
   
 .footer {
     background-color: colors.$black;
@@ -85,7 +66,6 @@
     }
   
     &__title {
-      font-weight: 600;
       margin-top: 0.5em;
   
       @include responsive.tablet {
@@ -122,15 +102,8 @@
     }
   
     &__person {
-      font-weight: 600;
       padding: 0;
       margin-bottom: 0;
-  
-      @include responsive.tablet {
-        font-size: 0.75rem;
-        padding-bottom: 0;
-        height: 1rem;
-      }
   
       @include responsive.desktop {
         margin-left: 3rem;
@@ -141,11 +114,6 @@
       margin: 0;
       padding: 0;
   
-      @include responsive.tablet {
-        font-size: 0.75rem;
-        padding-top: 0;
-      }
-  
       @include responsive.desktop {
         margin-left: 3rem;
       }
@@ -154,10 +122,6 @@
     &__location {
       margin-bottom: 0;
   
-      @include responsive.tablet {
-        font-size: 0.75rem;
-      }
-  
       @include responsive.desktop {
         margin-left: 3rem;
       }
@@ -165,10 +129,6 @@
   
     &__location-continue {
       margin-top: 0;
-  
-      @include responsive.tablet {
-        font-size: 0.75rem;
-      }
   
       @include responsive.desktop {
         margin-left: 3rem;
@@ -180,10 +140,6 @@
       display: block;
       padding-top: 0.5em;
       padding-bottom: 1em;
-  
-      @include responsive.tablet {
-        font-size: 0.75rem;
-      }
   
       @include responsive.desktop {
         margin-left: 3rem;
