@@ -3,7 +3,6 @@
 @forward "partials/layout";
 @use "partials/colors";
 @use "partials/responsive";
-@use "partials/mixins";
 
 .hero {
   background-image: linear-gradient(
@@ -150,15 +149,11 @@
     display: flex;
     margin-bottom: 1em;
     flex-wrap: wrap;
-
-    @include responsive.mobile {
-      flex-direction: column;
-      gap: 1em;
-    }
+    flex-direction: column;
+    gap: 1em;
 
     @include responsive.tablet {
       flex-direction: row;
-      gap: 1em;
     }
   }
 
