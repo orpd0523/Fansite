@@ -1,88 +1,73 @@
 @use "responsive";
 
-h1 {
-  margin: 0;
-  padding: 0;
-  font-weight: 700;
-  font-size: 8vw;
-  @include responsive.mobile {
-    height: 32px;
-  }
+$regular: 400;
+$demi: 600;
+$bold: 700; 
 
-  @include responsive.tablet {
-    height: 68px;
+%text-sm{
+  font-size: .8125rem;
+  line-height: 1.125rem;
+  font-weight: $regular;
+}
+
+%text-base {
+  font-size: .875rem;
+  line-height: 1.375rem;
+  font-weight: $demi;
+}
+
+%text-lg {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: $bold;
+}
+
+h1 {
+  @extend %text-lg;
+  @include responsive.tablet{
+    font-size: 3.75rem;
+    line-height: 4.25rem;
   }
 }
 
 h2 {
-  margin: 0;
-  padding: 0;
-  @include responsive.mobile {
-    font-size: 24px;
-    height: 32px;
-    font-weight: 700;
-  }
-
-  @include responsive.tablet {
-    font-size: 36px;
-    height: 44px;
-    font-weight: 700;
+  @extend %text-lg;
+  @include responsive.tablet{
+    font-size: 2.25rem;
+    line-height: 2.75rem;
   }
 }
 
 h3 {
-  @include responsive.mobile {
-    font-size: 14px;
-    height: 22px;
-    font-weight: 600;
-  }
-
-  @include responsive.tablet {
-    font-size: 24px;
-    height: 32px;
-    font-weight: 600;
+  @extend %text-base;
+  @include responsive.tablet{
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
 body {
-  @include responsive.mobile {
-    font-size: 13px;
-    height: 18px;
-    font-weight: 400;
-  }
-
+  @extend %text-sm;
   @include responsive.tablet {
-    font-size: 14px;
-    height: 22px;
-    font-weight: 400;
+    font-size: .875rem;
+    line-height: 1.375rem;
   }
 }
 
 footer {
-  @include responsive.mobile {
-    font-size: 13px;
-    height: 18px;
-    font-weight: 400;
-  }
-
+  @extend %text-sm;
   @include responsive.tablet {
-    font-size: 14px;
-    height: 20px;
-    font-weight: 400;
+    font-size: .875rem;
+    line-height: 1.25rem;
   }
 }
 
 label,
 button {
-  @include responsive.mobile {
-    font-size: 110px;
-    height: 20px;
-    font-weight: 700;
-  }
-
+  font-size: .625rem;
+  height: 1.25rem;
+  font-weight: $bold;
   @include responsive.tablet {
-    font-size: 12px;
-    height: 20px;
-    font-weight: 700;
+    font-size: .75rem;
   }
 }
