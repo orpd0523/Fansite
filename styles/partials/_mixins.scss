@@ -1,0 +1,10 @@
+@use "colors";
+
+$hero-bg: colors.$black-50; 
+@mixin hero-background($image){
+  background-image: 
+    linear-gradient( $hero-bg, $hero-bg),
+    url("../assets/images/#{$image}");
+  background-position: center;
+  background-size: cover;
+}

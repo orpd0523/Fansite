@@ -1,20 +1,21 @@
-@forward "partials/core";
-@forward "partials/typography";
-@forward "partials/layout";
 @use "partials/colors";
 @use "partials/responsive";
+@use "partials/mixins";
+
+%container {
+  max-width: responsive.$desktop-breakpoint;
+  margin: 0 auto;
+}
+
+
 
 .hero {
-  background-image: linear-gradient(
-      colors.$black-50,
-      colors.$black-50
-    ),
-    url("../assets/images/hero-bio.jpg");
+  @include mixins.hero-background("hero-bio.jpg");
+
   display: flex;
   align-items: center;
   height: 60vw;
-  background-position: center;
-  background-size: cover;
+  
 
   @include responsive.desktop {
     max-height: 50em;

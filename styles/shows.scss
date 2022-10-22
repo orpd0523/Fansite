@@ -1,15 +1,24 @@
-@forward "partials/core";
-@forward "partials/typography";
 @use "partials/colors";
 @use "partials/responsive";
-@forward "partials/layout";
+@use "partials/mixins";
 
+.hero{
+  @include mixins.hero-background("hero-show.jpg");
+  display: flex;
+  align-items: center;
+  height: 60vw;
+}
 
 .about {
     padding-top: 1em;
   
     &__image {
-      @include image;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: auto;
+      max-width: 95vw;
+      height: auto;
       @include responsive.tablet {
         height: 60vw;
         width: 75vw;
@@ -22,49 +31,43 @@
     }
   
     &__title {
-      @include title;
-      font-weight: 600;
       margin: 0.25em 0.5em;
-      font-size: 6vw;
   
       @include responsive.desktop {
-        font-size: 4em;
         padding-left: 3rem;
         margin: 1em;
       }
     }
   
     &__quote {
-      @include about-text;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
       padding: 1em 1em 0.25em;
-      font-size: 4.5vw;
   
       @include responsive.tablet {
-        font-size: 3vw;
         padding: 1em 3.8em 0.25em;
       }
   
       @include responsive.desktop {
-        font-size: 2em;
         max-width: 38em;
         margin-left: 3em;
       }
     }
   
     &__cite {
-      @include about-text;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
       font-style: normal;
       padding: 0 1em;
       margin-top: 0;
-      font-size: 4.5vw;
   
       @include responsive.tablet {
-        font-size: 2.5vw;
         padding: 1em 4.5em 0.25em;
       }
   
       @include responsive.desktop {
-        font-size: 2em;
         padding-left: 6.5em;
       }
     }
@@ -72,35 +75,24 @@
     &__section-header,
     &__article-p {
       margin: 1rem;
-      font-weight: 500;
     }
   
     &__section-header {
-      font-weight: 600;
-      font-size: 4.5vw;
   
       @include responsive.tablet {
-        font-size: 3vw;
         padding: 1em 3em 1em;
       }
   
       @include responsive.desktop {
-        font-size: 2em;
         padding-left: 6.5em;
       }
     }
   
     &__article-p {
-      font-size: 4.5vw;
   
       @include responsive.tablet {
         display: inline-block;
         max-width: 35vw;
-        font-size: 0.9rem;
-      }
-  
-      @include responsive.desktop {
-        font-size: 1em;
       }
   
       &--left {
