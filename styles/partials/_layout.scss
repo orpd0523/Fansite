@@ -1,0 +1,221 @@
+@use "colors";
+@use "responsive";
+
+.header {
+    background-color: colors.$primary-black;
+    color: colors.$primary-white;
+  
+    &__nav {
+      display: flex;
+  
+      @include responsive.mobile {
+        flex-direction: column;
+      }
+  
+      @include responsive.tablet {
+        flex-direction: row;
+      }
+  
+      @include responsive.desktop {
+        margin-left: 6em;
+      }
+    }
+  
+    &__image {
+      height: fit-content;
+      @include responsive.mobile {
+        margin: 1em auto;
+      }
+  
+      @include responsive.tablet {
+        margin: 1.5em 2em;
+      }
+    }
+  
+    &__list {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+  
+      @include responsive.mobile {
+        margin: 0;
+        padding: 0;
+      }
+  
+      @include responsive.tablet {
+        margin: auto 0;
+        padding: auto;
+      }
+    }
+  
+    &__item {
+      padding-bottom: 1em;
+      flex-grow: 1;
+      text-align: center;
+  
+      @include responsive.tablet {
+        padding-top: 1.5em;
+        padding-bottom: 1.5em;
+        margin-left: 1em;
+        margin-right: 2em;
+      }
+  
+      &--selected {
+        border-bottom: 4px solid colors.$primary-white;
+      }
+    }
+  }
+  
+
+  
+  
+
+  
+.footer {
+    background-color: colors.$primary-black;
+    height: fit-content;
+    color: colors.$primary-white;
+    padding: 1em;
+    margin-left: auto;
+    margin-right: auto;
+  
+    @include responsive.tablet {
+      position: relative;
+    }
+  
+    &__title {
+      font-weight: 600;
+      margin-top: 0.5em;
+  
+      @include responsive.tablet {
+        display: inline-block;
+        margin-right: 1em;
+      }
+  
+      @include responsive.desktop {
+        margin-left: 3rem;
+      }
+    }
+  
+    &__contacts {
+      @include responsive.tablet {
+        display: flex;
+        flex-direction: row;
+        gap: 5rem;
+      }
+    }
+    &__icon {
+      margin-top: 1em;
+  
+      &--center {
+        margin: auto 1.5em;
+      }
+  
+      @include responsive.desktop {
+        margin-left: 3rem;
+      }
+    }
+  
+    &__social {
+      text-decoration: none;
+    }
+  
+    &__person {
+      font-weight: 600;
+      padding: 0;
+      margin-bottom: 0;
+  
+      @include responsive.tablet {
+        font-size: 0.75rem;
+        padding-bottom: 0;
+        height: 1rem;
+      }
+  
+      @include responsive.desktop {
+        margin-left: 3rem;
+      }
+    }
+  
+    &__organization {
+      margin: 0;
+      padding: 0;
+  
+      @include responsive.tablet {
+        font-size: 0.75rem;
+        padding-top: 0;
+      }
+  
+      @include responsive.desktop {
+        margin-left: 3rem;
+      }
+    }
+  
+    &__location {
+      margin-bottom: 0;
+  
+      @include responsive.tablet {
+        font-size: 0.75rem;
+      }
+  
+      @include responsive.desktop {
+        margin-left: 3rem;
+      }
+    }
+  
+    &__location-continue {
+      margin-top: 0;
+  
+      @include responsive.tablet {
+        font-size: 0.75rem;
+      }
+  
+      @include responsive.desktop {
+        margin-left: 3rem;
+      }
+    }
+  
+    &__email {
+      color: colors.$primary-white;
+      display: block;
+      padding-top: 0.5em;
+      padding-bottom: 1em;
+  
+      @include responsive.tablet {
+        font-size: 0.75rem;
+      }
+  
+      @include responsive.desktop {
+        margin-left: 3rem;
+      }
+    }
+  
+    &__image {
+      display: block;
+      height: fit-content;
+      margin: 4em auto 1em;
+  
+      @include responsive.tablet {
+        position: absolute;
+        top: -1rem;
+        right: 4rem;
+      }
+  
+      @include responsive.desktop {
+        right: 6rem;
+      }
+    }
+  
+    &__copyright {
+      font-size: 0.7rem;
+  
+      @include responsive.tablet {
+        margin-top: 2em;
+      }
+  
+      @include responsive.desktop {
+        margin-left: 3rem;
+      }
+    }
+  }
+  
