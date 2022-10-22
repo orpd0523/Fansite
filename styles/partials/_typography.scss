@@ -1,73 +1,150 @@
 @use "responsive";
-
-$regular: 400;
+/* FONT-WEIGHT */
+$base: 400;
 $demi: 600;
-$bold: 700; 
+$bold: 700;
+
+/* FONT-SIZE */
+$size-xxs: 0.625rem;
+$size-xs: 0.75rem;
+$size-sm: 0.8125rem;
+$size-base: 0.875rem;
+$size-lg: 1.5rem;
+$size-xl: 2.25rem;
+$size-xxl: 3.75rem;
+
+/*LINE-HEIGHT*/
+$line-xxl: 4.25rem;
+$line-xl: 2.75rem;
+$line-lg: 2rem;
+$line-base: 1.375rem;
+$line-sm: 1.25rem;
+$line-xs: 1.125rem;
+
+%font-base {
+  font-weight: $base;
+};
+
+%font-demi {
+  font-weight: $demi;
+};
+
+%font-bold {
+  font-weight: $bold;
+};
+
+%text-xxs {
+  font-size: $size-xxs;
+  height: $line-sm
+};
+
+%text-xs {
+  font-size: $size-xs;
+  height: $line-sm
+};
 
 %text-sm{
-  font-size: .8125rem;
-  line-height: 1.125rem;
-  font-weight: $regular;
-}
+  font-size: $size-sm;
+  line-height: $line-xs
+};
 
 %text-base {
-  font-size: .875rem;
-  line-height: 1.375rem;
-  font-weight: $demi;
-}
+  font-size: $size-base;
+  line-height: $line-base
+};
 
 %text-lg {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: $bold;
-}
+  font-size: $size-lg;
+  line-height: $line-lg
+};
 
-h1 {
-  @extend %text-lg;
-  @include responsive.tablet{
-    font-size: 3.75rem;
-    line-height: 4.25rem;
-  }
-}
+main, .header {
 
-h2 {
-  @extend %text-lg;
-  @include responsive.tablet{
-    font-size: 2.25rem;
-    line-height: 2.75rem;
-  }
-}
+  h1, h2 {
+    @extend %text-lg;
+    @extend %font-bold;
+  };
 
-h3 {
-  @extend %text-base;
-  @include responsive.tablet{
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-}
+  h3 {
+    @extend %text-base;
+    @extend %font-demi;
+  };
 
-body {
-  @extend %text-sm;
+  a, p, q, cite {
+    @extend %text-sm;
+    @extend %font-base;
+  };
+
+  label, button {
+    @extend %text-xxs;
+    @extend %font-bold;
+  };
+
   @include responsive.tablet {
-    font-size: .875rem;
-    line-height: 1.375rem;
-  }
-}
+    h1{
+      font-size: $size-xxl;
+      line-height: $line-xl;
+    };
 
-footer {
-  @extend %text-sm;
-  @include responsive.tablet {
-    font-size: .875rem;
-    line-height: 1.25rem;
-  }
-}
+    h2{
+      font-size: $size-xl;
+      line-height: $line-xl;
+    };
 
-label,
-button {
-  font-size: .625rem;
-  height: 1.25rem;
-  font-weight: $bold;
+    h3{
+      font-size: $size-lg;
+      line-height: $line-lg;
+    };
+
+    a, p, q, cite {
+      font-size: $size-base;
+      line-height: $line-base;
+    };
+
+    label, button {
+      font-size: $size-xs;
+    };
+  };
+
+};
+
+.footer {
+
+  h2 {
+    @extend %text-lg;
+    @extend %font-demi;
+  };
+
+  h3 {
+    @extend %text-sm;
+    @extend %font-base;
+  };
+
+  a, p {
+    @extend %text-xs;
+    @extend %font-base;
+  };
+
+  small{
+    @extend %text-xxs;
+    @extend %font-base;
+  };
+
   @include responsive.tablet {
-    font-size: .75rem;
-  }
-}
+
+    h2{
+      font-size: $size-xl;
+      line-height: $line-xl;
+    };
+
+    h3{
+      font-size: $size-base;
+      line-height: $line-base;
+    };
+
+    small {
+      font-size: $size-sm;
+      line-height: $line-xs;
+    };
+  };
+};

@@ -1,7 +1,6 @@
 @use "colors";
 @use "responsive";
 
-
 %container {
   max-width: responsive.$desktop-breakpoint;
   margin: 0 auto;
@@ -15,20 +14,10 @@
       display: flex;
       flex-direction: column;
       @extend %container;
-  
-      @include responsive.tablet {
-        flex-direction: row;
-        padding: 0 2.25rem;
-        gap: 2rem;
-      }
     }
   
     &__image {
       margin: .5rem auto;
-  
-      @include responsive.tablet {
-        margin: 1.5rem 0 ;
-      }
     }
   
     &__list {
@@ -56,6 +45,16 @@
     &__link {
       margin: .5rem auto;
     }
+
+    @include responsive.tablet {
+      &__nav {
+        flex-direction: row;
+        padding: 0 2.25rem;
+        gap: 2rem;
+      }
+      &__image {
+        margin: 1.5rem 0 ;
+      }
   }
   
 .footer {
@@ -86,55 +85,62 @@
       flex-direction: column;
       padding-bottom: 1rem;
       gap: .5rem;
-      
-      @include responsive.tablet {
-        flex-direction: row;
-        gap: 5rem;
-      }
     }
+
     &__icon {
       &--center {
         margin: auto 2rem;
       }
     }
-  
+
     &__social {
       text-decoration: none;
     }
-  
+
     &__person, &__location {
       margin-bottom: 0;
     }
-  
+
     &__organization {
       margin: 0;
     }
-  
+
     &__location-continue {
       margin-top: 0;
     }
-  
+
     &__email {
       color: colors.$white;
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
     }
-  
+
     &__image {
       display: block;
       padding: 1rem 1rem .5rem;
-      @include responsive.tablet {
+    }
+
+    &__copyright {
+      display:block;
+      margin: 1.5rem 1rem 1rem;
+    }
+
+    @include responsive.tablet {
+
+      &__contacts {
+        flex-direction: row;
+        gap: 5rem;
+      }
+
+      &__image {
         position: absolute;
         top: 2rem;
         right: 1rem;
       }
-    }
-  
-    &__copyright {
-      margin: .5rem 1rem 1rem;
-      @include responsive.tablet {
+
+      &__copyright{
         margin: 1rem 2rem;
       }
     }
   }
-  
+}
