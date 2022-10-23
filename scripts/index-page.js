@@ -17,10 +17,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     let commentObject = {
       name: event.target[0].value,
       comment: event.target[1].value,
+      timestamp: now()
     };
     comments.push(commentObject);
     //console.log(comments)
-    //console.log(commentObject);
+    console.log(commentObject);
     commentForm.reset();
   });
 });
@@ -66,4 +67,21 @@ function displayComment(commentObject) {
     let paragraph = document.createElement ("p");
     paragraph.innerText = commentObject.comment;
     container.appendChild(paragraph);
+}
+
+function now(){
+    let date = new Date();
+    let year = date.getFullYear();
+    let month = date.getMonth()+1;
+    let day = date.getDate();
+    console.log(day);
+    return twoDigit(month) + "/" + twoDigit(day) + "/" + year;
+}
+
+function twoDigit(number){
+    if (number < 10){
+        return "0" + number;
+    } else {
+        return number;
+    }
 }
