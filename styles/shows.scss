@@ -3,7 +3,7 @@
 @use "partials/mixins";
 
 .hero{
-  @include mixins.hero-background("hero-show.jpg");
+  @include mixins.hero-background("hero-shows.jpg");
   display: flex;
   align-items: center;
   height: 60vw;
