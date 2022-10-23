@@ -8,9 +8,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
   };
   displayComment(testComment)
 
-
-
-
   let commentForm = document.querySelector(".comments__form");
   commentForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -18,14 +15,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
     //console.log(event.target[0].value);
     //console.log(event.target[1].value);
     let commentObject = {
-      username: event.target[0].value,
+      name: event.target[0].value,
       comment: event.target[1].value,
     };
-    console.log(commentObject);
+    comments.push(commentObject);
+    //console.log(comments)
+    //console.log(commentObject);
+    commentForm.reset();
   });
 });
 
-let defaultComments = [
+let comments = [
   {
     name: "Connor Walton",
     timestamp: "02/17/2021",
