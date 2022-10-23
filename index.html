@@ -127,17 +127,20 @@
       </section>
     </main>
     <!--Comments Section-->
-<section>
+<section class="comments">
   <h2>Join the Conversation</h2>
-  <form>
-    <label for="comments" >Name
+  <form class="comments__form">
+    <label for="username">Name
       <input type="text" name="username" placeholder="Enter your name"></input>
     </label>
-    <label for="comments" >Comment
-      <textarea name="comment" placeholder="Enter your name"></textarea>
+    <label for="comment">Comment
+      <textarea name="comment" placeholder="Add a new comment"></textarea>
     </label>
     <button type="submit">Comment</button>
   </form>
+  <div class="comments__display">
+
+  </div>
 </section>
     <!--Navigation Footer-->
     <footer class="footer">
@@ -207,5 +210,6 @@
         Copyright The Bees Knees &#169; 2021 All Rights Reserved
       </small>
     </footer>
+    <script defer src="./scripts/index-page.js"></script>
   </body>
 </html>
