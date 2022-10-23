@@ -44,26 +44,26 @@ function displayComment(commentObject) {
   let display = document.querySelector(".comments__display");
 
   let container = document.createElement("div");
-  container.className = 'comment__container';
+  container.className = 'comments__container';
   display.appendChild(container);
 
   let avatar = document.createElement("img");
-  avatar.className = 'comment__avatar';
+  avatar.className = 'comments__avatar';
   display.appendChild(avatar);
 
   let user = document.createElement("p");
   user.innerText = commentObject.name;
-  user.className = 'comment__username';
+  user.className = 'comments__username';
   container.appendChild(user);
 
   let date = document.createElement("p");
   date.innerText = commentObject.timestamp;
-  date.className = 'comment__date';
+  date.className = 'comments__date';
   container.appendChild(date);
 
   let paragraph = document.createElement("p");
   paragraph.innerText = commentObject.comment;
-  date.className = 'comment__message';
+  date.className = 'comments__message';
   container.appendChild(paragraph);
 }
 

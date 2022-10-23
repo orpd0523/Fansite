@@ -129,15 +129,22 @@
     <!--Comments Section-->
 <section class="comments">
   <h2>Join the Conversation</h2>
-  <form class="comments__form">
-    <label for="username">Name
-      <input type="text" name="username" placeholder="Enter your name"></input>
-    </label>
-    <label for="comment">Comment
-      <textarea name="comment" placeholder="Add a new comment"></textarea>
-    </label>
-    <button type="submit">Comment</button>
-  </form>
+  <div class="comments__form-container">
+    <div class="comments__commenter-container">
+      <img class="comments__commenter" src="./assets/images/Mohan-muruge.jpg" alt="commenter"/>
+    </div>
+    <form class="comments__form" >
+      <div class="comments__field">
+        <label class="comments__field-label" for="username">Name</label>
+        <input class="comments__field-input" type="text" name="username" placeholder="Enter your name"></input>
+      </div>
+      <div class="comments__field">
+        <label class="comments__field-label" for="comment">Comment</label>
+        <textarea class="comments__field-input" name="comment" placeholder="Add a new comment"></textarea>
+      </div>
+      <button class="comments__submit-button" type="submit">Comment</button>
+    </form>
+  </div>
   <div class="comments__display">
     
   </div>

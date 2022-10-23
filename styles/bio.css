@@ -1,13 +1,13 @@
-.hero__container {
+.comments, .hero__container {
   max-width: 1280px;
   margin: 0 auto;
 }
 
-.hero__container {
+.comments, .hero__container {
   padding: 1rem;
 }
 @media (min-width: 768px) {
-  .hero__container {
+  .comments, .hero__container {
     padding: 2.25rem;
   }
 }
@@ -131,4 +131,55 @@
     margin-top: 0.5rem;
     margin-bottom: 0.25rem;
   }
+}
+
+.comments__avatar, .comments__commenter {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+}
+
+.comments__form-container {
+  display: flex;
+}
+.comments__commenter {
+  margin-top: 1.19rem;
+}
+.comments__form {
+  padding: 0 0.5rem 0.5rem;
+}
+.comments__field {
+  padding: 0.75rem;
+}
+.comments__field:first-child {
+  padding-top: 0;
+}
+.comments__field-label {
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #afafaf;
+}
+.comments__field-input {
+  min-height: 2.25rem;
+  width: 100%;
+  border: 1px solid #e1e1e1;
+  border-radius: 0.25rem;
+}
+.comments__field-input:focus {
+  border: 1px solid #323232;
+}
+.comments__field-input--error {
+  border: 1px solid #d22d2d;
+}
+.comments__submit-button {
+  background-color: #323232;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  height: 2rem;
+  width: calc(100% - 1.5rem);
+  margin: 0 0.75rem;
 }/*# sourceMappingURL=bio.css.map */
