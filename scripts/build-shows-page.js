@@ -42,34 +42,42 @@ function displayConcert(concertObject) {
     let display = document.querySelector(".shows__list");
 
     let container = document.createElement("div");
+    container.className = 'shows__item';
     display.appendChild(container);
 
     let dateLabel = document.createElement("p");
     dateLabel.innerText = 'DATE';
+    container.className = 'shows__label';
     container.appendChild(dateLabel);
 
     let date = document.createElement("p");
     date.innerText = concertObject.date;
+    container.className = 'shows__date';
     container.appendChild(date);
 
     let venueLabel = document.createElement("p");
     venueLabel.innerText = 'VENUE';
+    container.className = 'shows__label';
     container.appendChild(venueLabel);
 
     let venue = document.createElement("p");
     venue.innerText = concertObject.venue;
+    container.className = 'shows__venue';
     container.appendChild(venue);
 
     let locationLabel = document.createElement("p");
     locationLabel.innerText = 'LOCATION';
+    container.className = 'shows__label';
     container.appendChild(locationLabel);
 
     let location = document.createElement("p");
     location.innerText = concertObject.location;
+    container.className = 'shows__venue';
     container.appendChild(location);
 
     let button = document.createElement("button");
     button.innerText = 'BUY TICKETS';
+    container.className = 'shows__button';
     container.appendChild(button);
 }
 
