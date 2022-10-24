@@ -3,19 +3,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
   let commentForm = document.querySelector(".comments__form");
   commentForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    //console.log("Form Submitted")
-    //console.log(event.target[0].value);
-    //console.log(event.target[1].value);
+
     let commentObject = {
       name: event.target[0].value,
       comment: event.target[1].value,
       timestamp: now(),
     };
+
     comments.push(commentObject);
-    //console.log(comments)
-    console.log(commentObject);
-    renderComments();
     commentForm.reset();
+    clearComments();
+    renderComments();
+    
   });
 });
 
@@ -68,6 +67,10 @@ function displayComment(commentObject) {
   user.className = 'comments__card-main-top-user';
   cardMainTop.appendChild(user);
 
+  let spacer = document.createElement("div")
+  spacer.className = 'comments__card-main-top-spacer';
+  cardMainTop.appendChild(spacer);
+
   let date = document.createElement("p");
   date.innerText = commentObject.timestamp;
   date.className = 'comments__card-main-top-date';
@@ -80,7 +83,7 @@ function displayComment(commentObject) {
 }
 
 function renderComments() {
-  clearComments();
+  
   comments.reverse().forEach((comment) => {
     displayComment(comment);
   });

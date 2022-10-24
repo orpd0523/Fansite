@@ -178,7 +178,7 @@
 
   &__form{
     flex-grow: 1;
-    padding: 0 .5rem .5rem;
+    padding: 0 0 .5rem .5rem ;
 
 
     &-container{
@@ -193,7 +193,6 @@
     }
 
     &-field{
-      padding: .75rem;
 
       &:first-child{
         padding-top: 0;
@@ -232,8 +231,7 @@
       font-size: 0.75rem;
       text-transform: uppercase;
       height: 2rem;
-      width: calc(100% - 1.50rem); //100% width - margin on both sides
-      margin: 0 .75rem;
+      width: 100%; //100% width - margin on both sides
 
       &:hover{
         background-color: colors.$dark-black;
@@ -274,7 +272,6 @@
     @extend %divider;
     padding: .5rem;
     display: flex;
-
     &-aside{
       padding-right: .25rem;
       &-avatar{
@@ -283,19 +280,24 @@
     }
 
     &-main{
+      flex-grow: 1;
+      
       padding-left: .25rem;
       &-top{
         margin-bottom: .25rem;
-
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
 
         &-user{
           font-size: 0.625rem;
           margin: 0;
           font-weight: 600;
         }
+
+        &-spacer{
+          flex-grow: 1;
+        }
+
         &-date{
           color: colors.$silver;
           margin: 0;
@@ -307,10 +309,13 @@
       &-body{
         margin: 0;
       }
-
-      
     }
 
+    @include responsive.tablet {
+      width: 90%;
+      max-width: 50rem;
+      margin: 0 auto 1.5rem;
+    }
   }
 
   

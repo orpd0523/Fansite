@@ -156,7 +156,7 @@
 
 .comments__form {
   flex-grow: 1;
-  padding: 0 0.5rem 0.5rem;
+  padding: 0 0 0.5rem 0.5rem;
 }
 .comments__form-container {
   display: flex;
@@ -164,9 +164,6 @@
 }
 .comments__form-avatar {
   margin-top: 1.19rem;
-}
-.comments__form-field {
-  padding: 0.75rem;
 }
 .comments__form-field:first-child {
   padding-top: 0;
@@ -199,8 +196,7 @@
   font-size: 0.75rem;
   text-transform: uppercase;
   height: 2rem;
-  width: calc(100% - 1.5rem);
-  margin: 0 0.75rem;
+  width: 100%;
 }
 .comments__form-submit-button:hover {
   background-color: #000000;
@@ -235,18 +231,21 @@
   padding-right: 0.25rem;
 }
 .comments__card-main {
+  flex-grow: 1;
   padding-left: 0.25rem;
 }
 .comments__card-main-top {
   margin-bottom: 0.25rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 .comments__card-main-top-user {
   font-size: 0.625rem;
   margin: 0;
   font-weight: 600;
+}
+.comments__card-main-top-spacer {
+  flex-grow: 1;
 }
 .comments__card-main-top-date {
   color: #afafaf;
@@ -255,4 +254,11 @@
 }
 .comments__card-main-body {
   margin: 0;
+}
+@media (min-width: 768px) {
+  .comments__card {
+    width: 90%;
+    max-width: 50rem;
+    margin: 0 auto 1.5rem;
+  }
 }/*# sourceMappingURL=bio.css.map */
