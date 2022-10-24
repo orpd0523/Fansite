@@ -14,24 +14,24 @@
   }
 }
 
-%grid-container {
-  display: grid;
-  column-count: 6;
-  gap: 0.5rem 1rem;
-  padding: 1rem;
-  width: 100%;
+// %grid-container {
+//   display: grid;
+//   column-count: 6;
+//   gap: 0.5rem 1rem;
+//   padding: 1rem;
+//   width: 100%;
 
-  @include responsive.tablet {
-    column-count: 12;
-    gap: 1rem 1.5rem;
-    padding: 1rem 2.25rem;
-  }
+//   @include responsive.tablet {
+//     column-count: 12;
+//     gap: 1rem 1.5rem;
+//     padding: 1rem 2.25rem;
+//   }
 
-  @include responsive.desktop {
-    margin: 0rem auto;
-  }
+//   @include responsive.desktop {
+//     margin: 0rem auto;
+//   }
   
-}
+// }
 
 .hero {
   @include mixins.hero-background("hero-bio.jpg");
@@ -53,56 +53,164 @@
 
 
 .about {
-  @extend %grid-container;
-  grid-template-areas:
-    'title title title title title title'
-    'image image image image image image'
-    'quote quote quote quote quote quote'
-    'cite cite cite cite cite cite'
-    'header header header header header header'
-    'p1 p1 p1 p1 p1 p1'
-    'p2 p2 p2 p2 p2 p2'
-  ;
-
-  &__title{
-    margin: 0;
-    grid-area: title;
-  }
+  padding-top: 1em;
+  @extend %container;
+  @extend %margins;
 
   &__image {
-    grid-area: image;
-    object-fit: cover;
-    object-position: bottom;
-    @extend %fit-vw;
-  }
-
-  &__quote {
-    grid-area: quote;
-    @extend %fit-vw;
-  }
-
-  &__cite {
-    grid-area: cite;
-    font-style: normal;
-    @extend %fit-vw;
-  }
-
-  &__section-header {
-    margin: 0;
-    grid-area: header;
-    @extend %fit-vw;
-  }
-
-  &__article-p {
-    @extend %fit-vw;
-    &--1{
-      grid-area: p1
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    max-width: 95vw;
+    height: auto;
+    @include responsive.tablet {
+      height: 60vw;
+      width: 75vw;
     }
-    &--2{
-      grid-area: p2
+
+    @include responsive.desktop {
+      max-width: 65em;
+      max-height: 40em;
     }
+
+    &__title {
+      margin: 0.25em 0.5em;
+  
+  
+      @include responsive.desktop {
+  
+        padding-left: 3rem;
+        margin: 1em;
+      }
+    }
+
+    &__quote {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 1em 1em 0.25em;
+  
+      @include responsive.tablet {
+        padding: 1em 3.8em 0.25em;
+      }
+  
+      @include responsive.desktop {
+        max-width: 38em;
+        margin-left: 3em;
+      }
+    }
+
+    &__cite {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      font-style: normal;
+      padding: 0 1em;
+      margin-top: 0;
+  
+      @include responsive.tablet {
+        padding: 1em 4.5em 0.25em;
+      }
+  
+      @include responsive.desktop {
+        padding-left: 6.5em;
+      }
+    }
+  
+    &__section-header,
+    &__article-p {
+      margin: 1rem;
+    }
+
+    &__section-header {
+
+      @include responsive.tablet {
+        padding: 1em 3em 1em;
+      }
+  
+      @include responsive.desktop {
+        padding-left: 6.5em;
+      }
+    }
+  
+    &__article-p {
+  
+  
+      @include responsive.tablet {
+        display: inline-block;
+        max-width: 35vw;
+      }
+  
+      &--left {
+        @include responsive.tablet {
+          margin-left: 6em;
+        }
+  
+        @include responsive.desktop {
+          margin-left: 14em;
+        }
+      }
+    }
+
+
   }
+
+
+
 }
+
+// .about {
+//   @extend %grid-container;
+//   grid-template-areas:
+//     'title title title title title title'
+//     'image image image image image image'
+//     'quote quote quote quote quote quote'
+//     'cite cite cite cite cite cite'
+//     'header header header header header header'
+//     'p1 p1 p1 p1 p1 p1'
+//     'p2 p2 p2 p2 p2 p2'
+//   ;
+
+//   &__title{
+//     margin: 0;
+//     grid-area: title;
+//   }
+
+//   &__image {
+//     grid-area: image;
+//     object-fit: cover;
+//     object-position: bottom;
+//     @extend %fit-vw;
+//   }
+
+//   &__quote {
+//     grid-area: quote;
+//     @extend %fit-vw;
+//   }
+
+//   &__cite {
+//     grid-area: cite;
+//     font-style: normal;
+//     @extend %fit-vw;
+//   }
+
+//   &__section-header {
+//     margin: 0;
+//     grid-area: header;
+//     @extend %fit-vw;
+//   }
+
+//   &__article-p {
+//     @extend %fit-vw;
+//     &--1{
+//       grid-area: p1
+//     }
+//     &--2{
+//       grid-area: p2
+//     }
+//   }
+// }
 
 
 

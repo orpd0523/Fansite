@@ -74,6 +74,9 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+.shows__headers {
+  display: none;
+}
 .shows__card {
   padding: 1rem;
   border-bottom: 1px solid #afafaf;
@@ -109,4 +112,23 @@
   text-transform: uppercase;
   height: 2rem;
   width: 100%;
+}
+@media (min-width: 768px) {
+  .shows__card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .shows__card-col {
+    height: 100%;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+  }
+  .shows__card-col-label {
+    height: 0px;
+    width: 0px;
+    display: none;
+  }
 }/*# sourceMappingURL=shows.css.map */
