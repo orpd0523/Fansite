@@ -76,6 +76,58 @@
     }
   }
 
+}
+
+.shows {
+
+  &__container{
+    @extend %container;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__card{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid colors.$silver;
+
+    &-col{
+
+      &-label{
+        color: colors.$silver;
+        font-size: 0.75rem;
+        display: block;
+      }
+
+      &-value{
+        margin-top: .5rem;
+        font-size: 0.875rem;
+
+        &--bold{
+          font-weight: 600;
+        }
+
+      }
+
+      &--button{
+        padding-right: .5rem;
+        padding-left: .5rem;
+      }
+    }
+
+    &-button{
+      background-color: colors.$black;
+      color: colors.$white;
+      border: none;
+      border-radius: .25rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      height: 2rem;
+      width: 100%;
+    }
+  }
+
+
 
 }
 

@@ -41,44 +41,61 @@ const concerts = [
 function displayConcert(concertObject) {
     let display = document.querySelector(".shows__list");
 
-    let container = document.createElement("div");
-    container.className = 'shows__item';
-    display.appendChild(container);
+    let card = document.createElement("div");
+    card.className = 'shows__card';
+    display.appendChild(card);
 
-    let dateLabel = document.createElement("p");
+    let dateCol = document.createElement("div");
+    dateCol.className = 'shows__card-col';
+    card.appendChild(dateCol);
+
+    let dateLabel = document.createElement("small");
     dateLabel.innerText = 'DATE';
-    container.className = 'shows__label';
-    container.appendChild(dateLabel);
+    dateLabel.className = 'shows__card-col-label';
+    dateCol.appendChild(dateLabel);
 
-    let date = document.createElement("p");
-    date.innerText = concertObject.date;
-    container.className = 'shows__date';
-    container.appendChild(date);
+    let dateValue = document.createElement("p");
+    dateValue.innerText = concertObject.date;
+    dateValue.classList = 'shows__card-col-value  shows__card-col-value--bold';
+    dateCol.appendChild(dateValue);
 
-    let venueLabel = document.createElement("p");
+
+    let venueCol = document.createElement("div");
+    venueCol.className = 'shows__card-col';
+    card.appendChild(venueCol);
+
+    let venueLabel = document.createElement("small");
     venueLabel.innerText = 'VENUE';
-    container.className = 'shows__label';
-    container.appendChild(venueLabel);
+    venueLabel.className = 'shows__card-col-label';
+    venueCol.appendChild(venueLabel);
 
-    let venue = document.createElement("p");
-    venue.innerText = concertObject.venue;
-    container.className = 'shows__venue';
-    container.appendChild(venue);
+    let venueValue = document.createElement("p");
+    venueValue.innerText = concertObject.venue;
+    venueValue.className = 'shows__card-col-value';
+    venueCol.appendChild(venueValue);
 
-    let locationLabel = document.createElement("p");
+    let locationCol = document.createElement("div");
+    locationCol.className = 'shows__card-col';
+    card.appendChild(locationCol);
+
+    let locationLabel = document.createElement("small");
     locationLabel.innerText = 'LOCATION';
-    container.className = 'shows__label';
-    container.appendChild(locationLabel);
+    locationLabel.className = 'shows__card-col-label';
+    locationCol.appendChild(locationLabel);
 
-    let location = document.createElement("p");
-    location.innerText = concertObject.location;
-    container.className = 'shows__venue';
-    container.appendChild(location);
+    let locationValue = document.createElement("p");
+    locationValue.innerText = concertObject.date;
+    locationValue.className = 'shows__card-col-value';
+    locationCol.appendChild(locationValue);
+
+    let buttonCol = document.createElement("div");
+    buttonCol.classList = 'shows__card-col shows__card-col--button';
+    card.appendChild(buttonCol);
 
     let button = document.createElement("button");
     button.innerText = 'BUY TICKETS';
-    container.className = 'shows__button';
-    container.appendChild(button);
+    button.className = 'shows__card-button';
+    buttonCol.appendChild(button);
 }
 
 function renderConcerts() {
