@@ -22,11 +22,13 @@
   background-size: cover;
   max-height: 40rem;
   color: #ffffff;
+  min-height: 16rem;
+  height: 60vw;
+}
+.hero__container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  min-height: 15rem;
-  height: 60vw;
+  align-items: left;
 }
 .hero__cta {
   width: calc(100% - 1rem);
@@ -35,7 +37,7 @@
   margin-bottom: 0;
 }
 .hero__cta-album {
-  max-width: 15rem;
+  max-width: 75%;
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 0;
@@ -43,15 +45,27 @@
 .hero__media {
   padding: 0;
   margin: 0;
-  width: calc(100% - 1rem);
-  height: 7rem;
-  -o-object-fit: fill;
-     object-fit: fill;
+  min-width: 17rem;
+  width: 60%;
+  max-width: 30rem;
+  min-height: 7rem;
+  height: 25vw;
+  max-height: 11rem;
 }
 .hero__media-container {
+  width: calc(100% - 1rem);
   padding: 0;
   margin: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
+}
+@media (min-width: 768px) {
+  .hero__cta-label {
+    font-size: 1.5rem;
+  }
+  .hero__cta-album {
+    margin-top: 1.375rem;
+    margin-bottom: 1.375rem;
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
 }/*# sourceMappingURL=shows.css.map */
