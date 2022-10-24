@@ -39,11 +39,24 @@ const concerts = [
 ];
 
 function displayConcert(concertObject) {
+    const cardDefaultClass = 'shows__card'
+    let selected = false;
     let display = document.querySelector(".shows__list");
 
+    
+
     let card = document.createElement("div");
-    card.className = 'shows__card';
+    card.className = cardDefaultClass;
     display.appendChild(card);
+
+    card.addEventListener('click', (event)=>{
+        selected = !selected;
+        if (selected){
+            card.classList = cardDefaultClass + " " + cardDefaultClass + "--selected" 
+        } else {
+            card.className = cardDefaultClass
+        }
+    })
 
     let dateCol = document.createElement("div");
     dateCol.className = 'shows__card-col';

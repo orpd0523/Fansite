@@ -87,9 +87,16 @@
   }
 
   &__card{
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem;
     border-bottom: 1px solid colors.$silver;
+
+    &--selected{
+      background-color: colors.$mercury;
+    }
+
+    &:hover{
+      background-color: colors.$alabaster;
+    }
 
     &-col{
 
