@@ -157,73 +157,163 @@
 %avatar {
   width: 2.25rem;
   height: 2.25rem;
+  background-color: colors.$mercury;
+  object-fit: cover;
+  object-position: left;
   border-radius: 50%;
+  @include responsive.tablet {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+%divider{
+  border-bottom: 1px solid colors.$mercury
 }
 
 .comments{
   @extend %container;
   @extend %margins;
 
-  &__form-container{
-    display: flex;
-  }
-
-  &__commenter{
-    @extend %avatar;
-    margin-top: 1.19rem;
-  }
 
   &__form{
+    flex-grow: 1;
     padding: 0 .5rem .5rem;
-  }
 
-  &__field{
-    padding: .75rem;
 
-    &:first-child{
-      padding-top: 0;
+    &-container{
+      display: flex;
+      margin-bottom: 1rem;
+      @extend %divider;
     }
 
-    &-label{
-      margin-bottom: .25rem;
+    &-avatar{
+      @extend %avatar;
+      margin-top: 1.19rem;
+    }
+
+    &-field{
+      padding: .75rem;
+
+      &:first-child{
+        padding-top: 0;
+      }
+
+      &-label{
+        margin-bottom: .25rem;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: colors.$silver;
+      }
+
+      &-input{
+        min-height: 2.25rem;
+        padding: .75rem;
+        font-size: 0.75rem;
+        width: 100%;
+        border: 1px solid colors.$mercury;
+        border-radius: .25rem;
+
+        &:focus{
+          border: 1px solid colors.$black;
+        }
+
+        &:invalid{
+          border: 1px solid #d22d2d;
+        }
+      }
+    }
+
+    &-submit-button{
+      background-color: colors.$black;
+      color: colors.$white;
+      border: none;
+      border-radius: .25rem;
       font-size: 0.75rem;
       text-transform: uppercase;
-      color: colors.$silver;
-    }
+      height: 2rem;
+      width: calc(100% - 1.50rem); //100% width - margin on both sides
+      margin: 0 .75rem;
 
-    &-input{
-      min-height: 2.25rem;
-      width: 100%;
-      border: 1px solid colors.$mercury;
-      border-radius: .25rem;
-
-      &:focus{
-        border: 1px solid colors.$black;
+      &:hover{
+        background-color: colors.$dark-black;
       }
 
-      &--error{
-        border: 1px solid #d22d2d;
+      &-container{
+        display: flex;
+      }
+    }
+
+    @include responsive.tablet {
+      &-container{
+        width: 90%;
+        max-width: 50rem;
+        margin: 0 auto 1.5rem;
+      }
+
+      &-field{
+        &-input{
+          min-height: 3rem;
+          padding: 1rem;
+        }
+      }
+
+      &-submit-button{
+        height: 2.5rem;
+        min-width: 9.375rem;
+        width:10%;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin-left: auto;
+        
       }
     }
   }
 
-  &__submit-button{
-    background-color: colors.$black;
-    color: colors.$white;
-    border: none;
-    border-radius: .25rem;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    height: 2rem;
-    width: calc(100% - 1.50rem); //100% width - margin on both sides
-    margin: 0 .75rem;
+  &__card{
+    @extend %divider;
+    padding: .5rem;
+    display: flex;
+
+    &-aside{
+      padding-right: .25rem;
+      &-avatar{
+        @extend %avatar;
+      }
+    }
+
+    &-main{
+      padding-left: .25rem;
+      &-top{
+        margin-bottom: .25rem;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &-user{
+          font-size: 0.625rem;
+          margin: 0;
+          font-weight: 600;
+        }
+        &-date{
+          color: colors.$silver;
+          margin: 0;
+          font-size: 0.625rem;
+        }
+
+      }
+
+      &-body{
+        margin: 0;
+      }
+
+      
+    }
+
   }
 
-  &__avatar{
-    @extend %avatar;
-  }
-
-
+  
 
 }
 

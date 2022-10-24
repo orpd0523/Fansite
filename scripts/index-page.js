@@ -43,28 +43,40 @@ let comments = [
 function displayComment(commentObject) {
   let display = document.querySelector(".comments__display");
 
-  let container = document.createElement("div");
-  container.className = 'comments__container';
-  display.appendChild(container);
+  let card = document.createElement("div");
+  card.className = 'comments__card';
+  display.appendChild(card);
+
+  let cardAside = document.createElement("div");
+  cardAside.className = 'comments__card-aside';
+  card.appendChild(cardAside);
 
   let avatar = document.createElement("img");
-  avatar.className = 'comments__avatar';
-  display.appendChild(avatar);
+  avatar.className = 'comments__card-aside-avatar';
+  cardAside.appendChild(avatar);
+
+  let cardMain = document.createElement("div");
+  cardMain.className = 'comments__card-main';
+  card.appendChild(cardMain);
+
+  let cardMainTop = document.createElement("div");
+  cardMainTop.className = 'comments__card-main-top';
+  cardMain.appendChild(cardMainTop);
 
   let user = document.createElement("p");
   user.innerText = commentObject.name;
-  user.className = 'comments__username';
-  container.appendChild(user);
+  user.className = 'comments__card-main-top-user';
+  cardMainTop.appendChild(user);
 
   let date = document.createElement("p");
   date.innerText = commentObject.timestamp;
-  date.className = 'comments__date';
-  container.appendChild(date);
+  date.className = 'comments__card-main-top-date';
+  cardMainTop.appendChild(date);
 
-  let paragraph = document.createElement("p");
-  paragraph.innerText = commentObject.comment;
-  date.className = 'comments__message';
-  container.appendChild(paragraph);
+  let message = document.createElement("p");
+  message.innerText = commentObject.comment;
+  message.className = 'comments__card-main-body';
+  cardMain.appendChild(message);
 }
 
 function renderComments() {
