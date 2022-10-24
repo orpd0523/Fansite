@@ -7,8 +7,6 @@ $hero-bg: colors.$black-50;
     url("../assets/images/#{$image}");
   background-position: center;
   background-size: cover;
-  min-height: 10rem;
-  height: 50vw;
   max-height: 40rem;
   color: colors.$white;
 }
