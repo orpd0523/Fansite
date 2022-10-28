@@ -12,31 +12,31 @@
     margin-left: 2.25rem;
   }
 
-  @include responsive.desktop{
+  @include responsive.desktop {
     margin-right: auto;
     margin-left: auto;
   }
 }
 
-.hero{
+.hero {
   @include mixins.hero-background("hero-shows.jpg");
-  
+
   min-height: 16rem;
   height: 60vw;
 
-  &__container{
+  &__container {
     @extend %container;
     display: flex;
     flex-direction: column;
     align-items: left;
   }
 
-  &__cta{
+  &__cta {
     width: calc(100% - 1rem);
-    &-label{
+    &-label {
       margin-bottom: 0;
     }
-    &-album{
+    &-album {
       max-width: 75%;
       font-size: 1.5rem;
       font-weight: 600;
@@ -44,7 +44,7 @@
     }
   }
 
-  &__media{
+  &__media {
     padding: 0;
     margin: 0;
     min-width: 17rem;
@@ -54,7 +54,7 @@
     height: 25vw;
     max-height: 11rem;
 
-    &-container{
+    &-container {
       width: calc(100% - 1rem);
       padding: 0;
       margin: 0;
@@ -63,11 +63,11 @@
   }
 
   @include responsive.tablet {
-    &__cta{
-      &-label{
+    &__cta {
+      &-label {
         font-size: 1.5rem;
       }
-      &-album{
+      &-album {
         margin-top: 1.375rem;
         margin-bottom: 1.375rem;
         font-size: 3.75rem;
@@ -75,62 +75,58 @@
       }
     }
   }
-
 }
 
 .shows {
-
-  &__container{
+  &__container {
     @extend %container;
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
 
-  &__headers{
+  &__headers {
     display: none;
   }
 
-  &__card{
+  &__card {
     padding: 1rem;
     border-bottom: 1px solid colors.$silver;
 
-    &--selected{
+    &--selected {
       background-color: colors.$mercury;
     }
 
-    &:hover{
+    &:hover {
       background-color: colors.$alabaster;
     }
 
-    &-col{
-
-      &-label{
+    &-col {
+      &-label {
         color: colors.$silver;
         font-size: 0.75rem;
         display: block;
       }
 
-      &-value{
-        margin-top: .5rem;
+      &-value {
+        margin-top: 0.5rem;
         font-size: 0.875rem;
 
-        &--bold{
+        &--bold {
           font-weight: 600;
         }
-
       }
 
-      &--button{
-        padding-right: .5rem;
-        padding-left: .5rem;
+      &--button {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
       }
     }
 
-    &-button{
+    &-button {
       background-color: colors.$black;
       color: colors.$white;
       border: none;
-      border-radius: .25rem;
+      border-radius: 0.25rem;
       font-size: 0.75rem;
       text-transform: uppercase;
       height: 2rem;
@@ -143,12 +139,12 @@
       justify-content: space-between;
       align-items: center;
 
-      &-col{
+      &-col {
         height: 100%;
         display: flex;
         justify-items: center;
         justify-content: center;
-        &-label{
+        &-label {
           height: 0px;
           width: 0px;
           display: none;
@@ -157,4 +153,3 @@
     }
   }
 }
-

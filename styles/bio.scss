@@ -14,43 +14,22 @@
   }
 }
 
-// %grid-container {
-//   display: grid;
-//   column-count: 6;
-//   gap: 0.5rem 1rem;
-//   padding: 1rem;
-//   width: 100%;
-
-//   @include responsive.tablet {
-//     column-count: 12;
-//     gap: 1rem 1.5rem;
-//     padding: 1rem 2.25rem;
-//   }
-
-//   @include responsive.desktop {
-//     margin: 0rem auto;
-//   }
-  
-// }
-
 .hero {
   @include mixins.hero-background("hero-bio.jpg");
-  &__container{
+  &__container {
     @extend %container;
     @extend %margins;
     min-height: 10rem;
-    height:100%;
+    height: 100%;
     max-height: 40rem;
     display: flex;
     align-items: center;
   }
 }
 
-
-%fit-vw{
-  max-width:calc(100% - 2.25rem);
+%fit-vw {
+  max-width: calc(100% - 2.25rem);
 }
-
 
 .about {
   padding-top: 1em;
@@ -76,10 +55,8 @@
 
     &__title {
       margin: 0.25em 0.5em;
-  
-  
+
       @include responsive.desktop {
-  
         padding-left: 3rem;
         margin: 1em;
       }
@@ -90,11 +67,11 @@
       margin-left: auto;
       margin-right: auto;
       padding: 1em 1em 0.25em;
-  
+
       @include responsive.tablet {
         padding: 1em 3.8em 0.25em;
       }
-  
+
       @include responsive.desktop {
         max-width: 38em;
         margin-left: 3em;
@@ -108,113 +85,49 @@
       font-style: normal;
       padding: 0 1em;
       margin-top: 0;
-  
+
       @include responsive.tablet {
         padding: 1em 4.5em 0.25em;
       }
-  
+
       @include responsive.desktop {
         padding-left: 6.5em;
       }
     }
-  
+
     &__section-header,
     &__article-p {
       margin: 1rem;
     }
 
     &__section-header {
-
       @include responsive.tablet {
         padding: 1em 3em 1em;
       }
-  
+
       @include responsive.desktop {
         padding-left: 6.5em;
       }
     }
-  
+
     &__article-p {
-  
-  
       @include responsive.tablet {
         display: inline-block;
         max-width: 35vw;
       }
-  
+
       &--left {
         @include responsive.tablet {
           margin-left: 6em;
         }
-  
+
         @include responsive.desktop {
           margin-left: 14em;
         }
       }
     }
-
-
   }
-
-
-
 }
-
-// .about {
-//   @extend %grid-container;
-//   grid-template-areas:
-//     'title title title title title title'
-//     'image image image image image image'
-//     'quote quote quote quote quote quote'
-//     'cite cite cite cite cite cite'
-//     'header header header header header header'
-//     'p1 p1 p1 p1 p1 p1'
-//     'p2 p2 p2 p2 p2 p2'
-//   ;
-
-//   &__title{
-//     margin: 0;
-//     grid-area: title;
-//   }
-
-//   &__image {
-//     grid-area: image;
-//     object-fit: cover;
-//     object-position: bottom;
-//     @extend %fit-vw;
-//   }
-
-//   &__quote {
-//     grid-area: quote;
-//     @extend %fit-vw;
-//   }
-
-//   &__cite {
-//     grid-area: cite;
-//     font-style: normal;
-//     @extend %fit-vw;
-//   }
-
-//   &__section-header {
-//     margin: 0;
-//     grid-area: header;
-//     @extend %fit-vw;
-//   }
-
-//   &__article-p {
-//     @extend %fit-vw;
-//     &--1{
-//       grid-area: p1
-//     }
-//     &--2{
-//       grid-area: p2
-//     }
-//   }
-// }
-
-
-
-
 
 .gallery {
   background-color: colors.$alabaster;
@@ -256,7 +169,6 @@
   }
 
   &__title {
-
     @include responsive.tablet {
       margin-top: 0.5rem;
       margin-bottom: 0.25rem;
@@ -277,146 +189,141 @@
   }
 }
 
-%divider{
-  border-bottom: 1px solid colors.$mercury
+%divider {
+  border-bottom: 1px solid colors.$mercury;
 }
 
-.comments{
+.comments {
   @extend %container;
   @extend %margins;
 
-
-  &__form{
+  &__form {
     flex-grow: 1;
-    padding: 0 0 .5rem .5rem ;
+    padding: 0 0 0.5rem 0.5rem;
 
-
-    &-container{
+    &-container {
       display: flex;
       margin-bottom: 1rem;
       @extend %divider;
     }
 
-    &-avatar{
+    &-avatar {
       @extend %avatar;
       margin-top: 1.19rem;
     }
 
-    &-field{
-
-      &:first-child{
+    &-field {
+      &:first-child {
         padding-top: 0;
       }
 
-      &-label{
-        margin-bottom: .25rem;
+      &-label {
+        margin-bottom: 0.25rem;
         text-transform: uppercase;
         font-weight: 400;
         color: colors.$silver;
       }
 
-      &-input{
+      &-input {
         min-height: 2.25rem;
-        padding: .75rem;
+        padding: 0.75rem;
         font-size: 0.75rem;
         width: 100%;
         border: 1px solid colors.$mercury;
-        border-radius: .25rem;
+        border-radius: 0.25rem;
 
-        &:focus{
+        &:focus {
           border: 1px solid colors.$black;
         }
 
-        &:invalid{
+        &:invalid {
           border: 1px solid #d22d2d;
         }
       }
     }
 
-    &-submit-button{
+    &-submit-button {
       background-color: colors.$black;
       color: colors.$white;
       border: none;
-      border-radius: .25rem;
+      border-radius: 0.25rem;
       font-size: 0.75rem;
       text-transform: uppercase;
       height: 2rem;
       width: 100%;
 
-      &:hover{
+      &:hover {
         background-color: colors.$dark-black;
       }
 
-      &-container{
+      &-container {
         display: flex;
       }
     }
 
     @include responsive.tablet {
-      &-container{
+      &-container {
         width: 90%;
         max-width: 50rem;
         margin: 0 auto 1.5rem;
       }
 
-      &-field{
-        &-input{
+      &-field {
+        &-input {
           min-height: 3rem;
           padding: 1rem;
         }
       }
 
-      &-submit-button{
+      &-submit-button {
         height: 2.5rem;
         min-width: 9.375rem;
-        width:10%;
+        width: 10%;
         padding-left: 2rem;
         padding-right: 2rem;
         margin-left: auto;
-        
       }
     }
   }
 
-  &__card{
+  &__card {
     @extend %divider;
-    padding: .5rem;
+    padding: 0.5rem;
     display: flex;
-    &-aside{
-      padding-right: .25rem;
-      &-avatar{
+    &-aside {
+      padding-right: 0.25rem;
+      &-avatar {
         @extend %avatar;
       }
     }
 
-    &-main{
+    &-main {
       flex-grow: 1;
-      
-      padding-left: .25rem;
-      &-top{
-        margin-bottom: .25rem;
+
+      padding-left: 0.25rem;
+      &-top {
+        margin-bottom: 0.25rem;
         display: flex;
         flex-direction: row;
 
-        &-user{
+        &-user {
           font-size: 0.625rem;
           margin: 0;
           font-weight: 600;
         }
 
-        &-spacer{
+        &-spacer {
           flex-grow: 1;
         }
 
-        &-date{
+        &-date {
           color: colors.$silver;
           margin: 0;
           font-size: 0.625rem;
         }
-
       }
 
-      &-body{
+      &-body {
         margin: 0;
       }
     }
@@ -427,8 +334,4 @@
       margin: 0 auto 1.5rem;
     }
   }
-
-  
-
 }
-

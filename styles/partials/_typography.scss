@@ -1,10 +1,9 @@
 @use "responsive";
-/* FONT-WEIGHT */
+
 $base: 400;
 $demi: 600;
 $bold: 700;
 
-/* FONT-SIZE */
 $size-xxs: 0.625rem;
 $size-xs: 0.75rem;
 $size-sm: 0.8125rem;
@@ -13,7 +12,6 @@ $size-lg: 1.5rem;
 $size-xl: 2.25rem;
 $size-xxl: 3.75rem;
 
-/*LINE-HEIGHT*/
 $line-xxl: 4.25rem;
 $line-xl: 2.75rem;
 $line-lg: 2rem;
@@ -23,128 +21,135 @@ $line-xs: 1.125rem;
 
 %font-base {
   font-weight: $base;
-};
+}
 
 %font-demi {
   font-weight: $demi;
-};
+}
 
 %font-bold {
   font-weight: $bold;
-};
+}
 
 %text-xxs {
   font-size: $size-xxs;
-  height: $line-sm
-};
+  height: $line-sm;
+}
 
 %text-xs {
   font-size: $size-xs;
-  height: $line-sm
-};
+  height: $line-sm;
+}
 
-%text-sm{
+%text-sm {
   font-size: $size-sm;
-  line-height: $line-xs
-};
+  line-height: $line-xs;
+}
 
 %text-base {
   font-size: $size-base;
-  line-height: $line-base
-};
+  line-height: $line-base;
+}
 
 %text-lg {
   font-size: $size-lg;
-  line-height: $line-lg
-};
+  line-height: $line-lg;
+}
 
-main, .header {
-
-  h1, h2 {
+main,
+.header {
+  h1,
+  h2 {
     @extend %text-lg;
     @extend %font-bold;
-  };
+  }
 
   h3 {
     @extend %text-base;
     @extend %font-demi;
-  };
+  }
 
-  a, p, q, cite {
+  a,
+  p,
+  q,
+  cite {
     @extend %text-sm;
     @extend %font-base;
-  };
+  }
 
-  label, button {
+  label,
+  button {
     @extend %text-xxs;
     @extend %font-bold;
-  };
+  }
 
   @include responsive.tablet {
-    h1{
+    h1 {
       font-size: $size-xxl;
       line-height: $line-xl;
-    };
+    }
 
-    h2{
+    h2 {
       font-size: $size-xl;
       line-height: $line-xl;
-    };
+    }
 
-    h3{
+    h3 {
       font-size: $size-lg;
       line-height: $line-lg;
-    };
+    }
 
-    a, p, q, cite {
+    a,
+    p,
+    q,
+    cite {
       font-size: $size-base;
       line-height: $line-base;
-    };
+    }
 
-    label, button {
+    label,
+    button {
       font-size: $size-xs;
-    };
-  };
-
-};
+    }
+  }
+}
 
 .footer {
-
   h2 {
     @extend %text-lg;
     @extend %font-demi;
-  };
+  }
 
   h3 {
     @extend %text-sm;
     @extend %font-base;
-  };
+  }
 
-  a, p {
+  a,
+  p {
     @extend %text-xs;
     @extend %font-base;
-  };
+  }
 
-  small{
+  small {
     @extend %text-xxs;
     @extend %font-base;
-  };
+  }
 
   @include responsive.tablet {
-
-    h2{
+    h2 {
       font-size: $size-xl;
       line-height: $line-xl;
-    };
+    }
 
-    h3{
+    h3 {
       font-size: $size-base;
       line-height: $line-base;
-    };
+    }
 
     small {
       font-size: $size-sm;
       line-height: $line-xs;
-    };
-  };
-};
+    }
+  }
+}
