@@ -1,8 +1,7 @@
 const BASE_URL = "http://project-1-api.herokuapp.com/"
 const apikey = "?api_key=d10b7838-1997-4fb9-bf66-f0cdd4a312ba"
 
-document.addEventListener("DOMContentLoaded", (event) => {
-  getShowDates();
+document.addEventListener("DOMContentLoaded", (event) => {getShowDates();
 });
 
 function displayConcert(concertObject) {

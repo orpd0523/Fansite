@@ -10,13 +10,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const commentObject = {
       name: event.target[0].value,
       comment: event.target[1].value,
-      timestamp: now(),
     };
 
-    comments.push(commentObject);
     commentForm.reset();
-    clearComments();
-    getComments();
+    postComment(commentObject);
     
   });
 });
@@ -75,23 +72,12 @@ function getComments(){
   .then((response) => {renderComments(response.data)}); 
 }
 
+function postComment(comment){
+  axios.post(BASE_URL + "comments"+ apikey, comment)
+  .then(() => {clearComments(); getComments()});
+}
+
 function clearComments() {
   const display = document.querySelector(".comments__display");
   display.innerHTML = "";
-}
-
-function now() {
-  const date = new Date();
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
-  return twoDigit(month) + "/" + twoDigit(day) + "/" + year;
-}
-
-function twoDigit(number) {
-  if (number < 10) {
-    return "0" + number;
-  } else {
-    return number;
-  }
 }
