@@ -1,6 +1,6 @@
 const BASE_URL = "http://project-1-api.herokuapp.com/"
 const apikey = "?api_key=d10b7838-1997-4fb9-bf66-f0cdd4a312ba"
-
+let comments = []
 document.addEventListener("DOMContentLoaded", (event) => {
   getComments();
   const commentForm = document.querySelector(".comments__form");
@@ -12,9 +12,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
       comment: event.target[1].value,
     };
 
-    commentForm.reset();
     postComment(commentObject);
-    
+    commentForm.reset();
   });
 });
 
@@ -69,12 +68,19 @@ function renderComments(comments) {
 
 function getComments(){
   axios.get(BASE_URL + "comments"+ apikey )
-  .then((response) => {renderComments(response.data)}); 
+  .then((response) => {
+    comments = response.data.sort((a,b)=> b.timestamp - a.timestamp)
+    renderComments(comments)
+  }); 
 }
 
 function postComment(comment){
   axios.post(BASE_URL + "comments"+ apikey, comment)
-  .then(() => {clearComments(); getComments()});
+  .then((response) => {
+    comments = [ response.data, ...comments ]
+    clearComments(); 
+    renderComments(comments)
+  });
 }
 
 function clearComments() {
