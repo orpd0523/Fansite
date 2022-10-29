@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
   });
 });
 
-
 function displayComment(commentObject) {
   const display = document.querySelector(".comments__display");
 

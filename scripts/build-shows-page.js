@@ -1,39 +1,9 @@
-document.addEventListener("DOMContentLoaded", (event) => {
-  renderConcerts();
-});
+const BASE_URL = "http://project-1-api.herokuapp.com/"
+const apikey = "?api_key=d10b7838-1997-4fb9-bf66-f0cdd4a312ba"
 
-const concerts = [
-  {
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 21 2021 ",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+document.addEventListener("DOMContentLoaded", (event) => {
+  getShowDates();
+});
 
 function displayConcert(concertObject) {
   const cardDefaultClass = "shows__card";
@@ -105,8 +75,13 @@ function displayConcert(concertObject) {
   buttonCol.appendChild(button);
 }
 
-function renderConcerts() {
-  concerts.forEach((concert) => {
-    displayConcert(concert);
+function renderShowDates(showdates) {
+    showdates.forEach((showdate) => {
+    displayConcert(showdate);
   });
+}
+
+function getShowDates(){
+  axios.get(BASE_URL + "showdates"+ apikey)
+  .then((response) => {renderShowDates(response.data)}); 
 }
