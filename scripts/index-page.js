@@ -90,9 +90,9 @@ function clearComments() {
 
 function timeStamp(date) {
   let d = new Date(date);
-  let year = d.getFullYear();
-  let month = d.getMonth() + 1;
-  let day = d.getDate();
+  let year = d.getUTCFullYear();
+  let month = d.getUTCMonth() + 1;
+  let day = d.getUTCDate();
   return twoDigit(month) + "/" + twoDigit(day) + "/" + year;
 }
 

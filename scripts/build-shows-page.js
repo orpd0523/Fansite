@@ -35,7 +35,8 @@ function displayConcert(concertObject) {
   dateCol.appendChild(dateLabel);
 
   const dateValue = document.createElement("p");
-  dateValue.innerText = concertObject.date;
+  console.log(concertObject.date)
+  dateValue.innerText = formatDate(concertObject.date);
   dateValue.classList.add("shows__card-col-value", "shows__card-col-value--bold");
   dateCol.appendChild(dateValue);
 
@@ -49,7 +50,7 @@ function displayConcert(concertObject) {
   venueCol.appendChild(venueLabel);
 
   const venueValue = document.createElement("p");
-  venueValue.innerText = concertObject.venue;
+  venueValue.innerText = concertObject.place;
   venueValue.classList.add("shows__card-col-value");
   venueCol.appendChild(venueValue);
 
@@ -63,7 +64,7 @@ function displayConcert(concertObject) {
   locationCol.appendChild(locationLabel);
 
   const locationValue = document.createElement("p");
-  locationValue.innerText = concertObject.date;
+  locationValue.innerText = concertObject.location;
   locationValue.classList.add("shows__card-col-value");
   locationCol.appendChild(locationValue);
 
@@ -86,4 +87,24 @@ function renderShowDates(showdates) {
 function getShowDates(){
   axios.get(BASE_URL + "showdates"+ apikey)
   .then((response) => {renderShowDates(response.data)}); 
+}
+
+function twoDigit(number) {
+  if (number < 10) {
+    return "0" + number;
+  } else {
+    return number;
+  }
+}
+
+const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
+
+function formatDate (date){
+  let d = new Date(date);
+  let dayOfWeek = daysOfWeek[d.getUTCDay()];
+  let day = twoDigit(d.getUTCDate());
+  let month = months[d.getUTCMonth()];
+  let year = d.getUTCFullYear();
+  return `${dayOfWeek} ${month} ${day} ${year}`;
 }
