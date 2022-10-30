@@ -94,6 +94,11 @@
   background-color: colors.$alabaster;
   padding: 1rem;
 
+  &__container{
+    @extend %container;
+    @extend %margins;
+  }
+
   @include responsive.desktop {
     padding-left: 4rem;
     padding-right: 4rem;
@@ -121,18 +126,7 @@
     height: auto;
 
     @include responsive.tablet {
-      max-width: 30vw;
-    }
-
-    @include responsive.desktop {
-      max-width: 29vw;
-    }
-  }
-
-  &__title {
-    @include responsive.tablet {
-      margin-top: 0.5rem;
-      margin-bottom: 0.25rem;
+      max-width: 32%;
     }
   }
 }

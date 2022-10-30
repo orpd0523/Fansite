@@ -1,13 +1,13 @@
-.comments, .about, .hero__container {
+.comments, .gallery__container, .about, .hero__container {
   max-width: 1280px;
   margin: 0 auto;
 }
 
-.comments, .about, .hero__container {
+.comments, .gallery__container, .about, .hero__container {
   padding: 1rem;
 }
 @media (min-width: 768px) {
-  .comments, .about, .hero__container {
+  .comments, .gallery__container, .about, .hero__container {
     padding: 2.25rem;
   }
 }
@@ -98,18 +98,7 @@
 }
 @media (min-width: 768px) {
   .gallery__image {
-    max-width: 30vw;
-  }
-}
-@media (min-width: 1280px) {
-  .gallery__image {
-    max-width: 29vw;
-  }
-}
-@media (min-width: 768px) {
-  .gallery__title {
-    margin-top: 0.5rem;
-    margin-bottom: 0.25rem;
+    max-width: 32%;
   }
 }
 
