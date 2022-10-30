@@ -27,100 +27,41 @@
   align-items: center;
 }
 
+.about__article-p, .about__section-header, .about__cite, .about__quote {
+  display: block;
+}
+
 .about {
-  padding-top: 1em;
+  padding-top: 1rem;
+}
+.about__article {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 95vw;
+}
+.about__article-text {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 .about__image {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
-  max-width: 95vw;
+  width: 100%;
   height: auto;
+  max-height: 40rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
 }
-@media (min-width: 768px) {
-  .about__image {
-    height: 60vw;
-    width: 75vw;
-  }
-}
-@media (min-width: 1280px) {
-  .about__image {
-    max-width: 65em;
-    max-height: 40em;
-  }
-}
-.about__image__title {
-  margin: 0.25em 0.5em;
-}
-@media (min-width: 1280px) {
-  .about__image__title {
-    padding-left: 3rem;
-    margin: 1em;
-  }
-}
-.about__image__quote {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1em 1em 0.25em;
-}
-@media (min-width: 768px) {
-  .about__image__quote {
-    padding: 1em 3.8em 0.25em;
-  }
-}
-@media (min-width: 1280px) {
-  .about__image__quote {
-    max-width: 38em;
-    margin-left: 3em;
-  }
-}
-.about__image__cite {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  font-style: normal;
-  padding: 0 1em;
+.about__cite {
   margin-top: 0;
 }
 @media (min-width: 768px) {
-  .about__image__cite {
-    padding: 1em 4.5em 0.25em;
-  }
-}
-@media (min-width: 1280px) {
-  .about__image__cite {
-    padding-left: 6.5em;
-  }
-}
-.about__image__section-header, .about__image__article-p {
-  margin: 1rem;
-}
-@media (min-width: 768px) {
-  .about__image__section-header {
-    padding: 1em 3em 1em;
-  }
-}
-@media (min-width: 1280px) {
-  .about__image__section-header {
-    padding-left: 6.5em;
-  }
-}
-@media (min-width: 768px) {
-  .about__image__article-p {
-    display: inline-block;
-    max-width: 35vw;
-  }
-}
-@media (min-width: 768px) {
-  .about__image__article-p--left {
-    margin-left: 6em;
-  }
-}
-@media (min-width: 1280px) {
-  .about__image__article-p--left {
-    margin-left: 14em;
+  .about__article-text {
+    flex-direction: row;
   }
 }
 

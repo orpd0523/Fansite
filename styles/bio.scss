@@ -31,100 +31,61 @@
   max-width: calc(100% - 2.25rem);
 }
 
+%about-element{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 95vw;
+}
+%about-text{
+  display: block;
+}
+
 .about {
-  padding-top: 1em;
+  padding-top: 1rem;
   @extend %container;
   @extend %margins;
 
-  &__image {
+  &__article{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: auto;
     max-width: 95vw;
+    &-text{
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+  &__image {
+    width: 100%;
     height: auto;
-    @include responsive.tablet {
-      height: 60vw;
-      width: 75vw;
-    }
+    max-height:40rem;
+    object-fit: cover;
+    object-position: bottom;
+  }
 
-    @include responsive.desktop {
-      max-width: 65em;
-      max-height: 40em;
-    }
+  &__quote {
+    @extend %about-text;
+  }
 
-    &__title {
-      margin: 0.25em 0.5em;
+  &__cite {
+    @extend %about-text;
+    margin-top: 0;
+  }
 
-      @include responsive.desktop {
-        padding-left: 3rem;
-        margin: 1em;
-      }
-    }
+  &__section-header {
+    @extend %about-text;
+  }
+  &__article-p {
+    @extend %about-text;
+  }
 
-    &__quote {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 1em 1em 0.25em;
-
-      @include responsive.tablet {
-        padding: 1em 3.8em 0.25em;
-      }
-
-      @include responsive.desktop {
-        max-width: 38em;
-        margin-left: 3em;
-      }
-    }
-
-    &__cite {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      font-style: normal;
-      padding: 0 1em;
-      margin-top: 0;
-
-      @include responsive.tablet {
-        padding: 1em 4.5em 0.25em;
-      }
-
-      @include responsive.desktop {
-        padding-left: 6.5em;
-      }
-    }
-
-    &__section-header,
-    &__article-p {
-      margin: 1rem;
-    }
-
-    &__section-header {
-      @include responsive.tablet {
-        padding: 1em 3em 1em;
-      }
-
-      @include responsive.desktop {
-        padding-left: 6.5em;
-      }
-    }
-
-    &__article-p {
-      @include responsive.tablet {
-        display: inline-block;
-        max-width: 35vw;
-      }
-
-      &--left {
-        @include responsive.tablet {
-          margin-left: 6em;
-        }
-
-        @include responsive.desktop {
-          margin-left: 14em;
-        }
-      }
+  @include responsive.tablet {
+    &__article-text {
+      flex-direction: row;
     }
   }
 }
