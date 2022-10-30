@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     event.preventDefault();
 
     const commentObject = {
-      name: event.target[0].value,
-      comment: event.target[1].value,
+      name: event.target.username.value,
+      comment: event.target.comment.value,
     };
 
     postComment(commentObject);
@@ -22,42 +22,42 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 function displayComment(commentObject) {
   const card = document.createElement("div");
-  card.classList = 'comments__card';
+  card.classList.add('comments__card');
   display.appendChild(card);
 
   const cardAside = document.createElement("div");
-  cardAside.classList = 'comments__card-aside';
+  cardAside.classList.add('comments__card-aside');
   card.appendChild(cardAside);
 
   const avatar = document.createElement("img");
-  avatar.classList = 'comments__card-aside-avatar';
+  avatar.classList.add('comments__card-aside-avatar');
   cardAside.appendChild(avatar);
 
   const cardMain = document.createElement("div");
-  cardMain.classList = 'comments__card-main';
+  cardMain.classList.add('comments__card-main');
   card.appendChild(cardMain);
 
   const cardMainTop = document.createElement("div");
-  cardMainTop.classList = 'comments__card-main-top';
+  cardMainTop.classList.add('comments__card-main-top');
   cardMain.appendChild(cardMainTop);
 
   const user = document.createElement("p");
   user.innerText = commentObject.name;
-  user.classList = 'comments__card-main-top-user';
+  user.classList.add('comments__card-main-top-user');
   cardMainTop.appendChild(user);
 
   const spacer = document.createElement("div")
-  spacer.classList = 'comments__card-main-top-spacer';
+  spacer.classList.add('comments__card-main-top-spacer');
   cardMainTop.appendChild(spacer);
 
   const date = document.createElement("p");
-  date.innerText = commentObject.timestamp;
-  date.classList = 'comments__card-main-top-date';
+  date.innerText = timeStamp(commentObject.timestamp);
+  date.classList.add('comments__card-main-top-date');
   cardMainTop.appendChild(date);
 
   const message = document.createElement("p");
   message.innerText = commentObject.comment;
-  message.classList = 'comments__card-main-body';
+  message.classList.add('comments__card-main-body');
   cardMain.appendChild(message);
 }
 
@@ -86,4 +86,20 @@ function postComment(comment){
 
 function clearComments() {
   display.innerHTML = "";
+}
+
+function timeStamp(date) {
+  let d = new Date(date);
+  let year = d.getFullYear();
+  let month = d.getMonth() + 1;
+  let day = d.getDate();
+  return twoDigit(month) + "/" + twoDigit(day) + "/" + year;
+}
+
+function twoDigit(number) {
+  if (number < 10) {
+    return "0" + number;
+  } else {
+    return number;
+  }
 }
