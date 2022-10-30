@@ -1,9 +1,10 @@
-const BASE_URL = "http://project-1-api.herokuapp.com/"
-const apikey = "?api_key=d10b7838-1997-4fb9-bf66-f0cdd4a312ba"
+const BASE_URL = "http://project-1-api.herokuapp.com/";
+const apikey = "?api_key=d10b7838-1997-4fb9-bf66-f0cdd4a312ba";
 const display = document.querySelector(".shows__list");
 let selected = false;
 
-document.addEventListener("DOMContentLoaded", (event) => {getShowDates();
+document.addEventListener("DOMContentLoaded", (event) => {
+  getShowDates();
 });
 
 function displayConcert(concertObject) {
@@ -15,14 +16,13 @@ function displayConcert(concertObject) {
   display.appendChild(card);
 
   card.addEventListener("click", (event) => {
-    if (selected === true ){
+    if (selected === true) {
       const previouslyClicked = document.querySelector("." + cardClickedClass);
       previouslyClicked.classList.remove(cardClickedClass);
     } else {
-      selected = true
+      selected = true;
     }
     card.classList.add(cardClickedClass);
-    
   });
 
   const dateCol = document.createElement("div");
@@ -35,9 +35,11 @@ function displayConcert(concertObject) {
   dateCol.appendChild(dateLabel);
 
   const dateValue = document.createElement("p");
-  console.log(concertObject.date)
   dateValue.innerText = formatDate(concertObject.date);
-  dateValue.classList.add("shows__card-col-value", "shows__card-col-value--bold");
+  dateValue.classList.add(
+    "shows__card-col-value",
+    "shows__card-col-value--bold"
+  );
   dateCol.appendChild(dateValue);
 
   const venueCol = document.createElement("div");
@@ -79,14 +81,15 @@ function displayConcert(concertObject) {
 }
 
 function renderShowDates(showdates) {
-    showdates.forEach((showdate) => {
+  showdates.forEach((showdate) => {
     displayConcert(showdate);
   });
 }
 
-function getShowDates(){
-  axios.get(BASE_URL + "showdates"+ apikey)
-  .then((response) => {renderShowDates(response.data)}); 
+function getShowDates() {
+  axios.get(BASE_URL + "showdates" + apikey).then((response) => {
+    renderShowDates(response.data);
+  });
 }
 
 function twoDigit(number) {
@@ -98,9 +101,22 @@ function twoDigit(number) {
 }
 
 const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
-const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
+const months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "June",
+  "July",
+  "Aug",
+  "Sept",
+  "Oct",
+  "Nov",
+  "Dec",
+];
 
-function formatDate (date){
+function formatDate(date) {
   let d = new Date(date);
   let dayOfWeek = daysOfWeek[d.getUTCDay()];
   let day = twoDigit(d.getUTCDate());
