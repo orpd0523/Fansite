@@ -114,6 +114,17 @@
   width: 100%;
 }
 @media (min-width: 768px) {
+  .shows__headers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .shows__header {
+    color: #afafaf;
+    font-size: 0.75rem;
+    display: block;
+  }
   .shows__card {
     display: flex;
     flex-direction: row;

@@ -133,12 +133,26 @@
       width: 100%;
     }
 
-    @include responsive.tablet {
+  }
+
+  @include responsive.tablet {
+    
+    &__headers{
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-
+    }
+    &__header{
+      color: colors.$silver;
+        font-size: 0.75rem;
+        display: block;
+    }
+    &__card{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
       &-col {
         height: 100%;
         display: flex;
@@ -152,4 +166,5 @@
       }
     }
   }
+  
 }
