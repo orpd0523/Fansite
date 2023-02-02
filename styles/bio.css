@@ -108,8 +108,8 @@
   background-color: #e1e1e1;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: left;
-     object-position: left;
+  -o-object-position: center;
+     object-position: center;
   border-radius: 50%;
 }
 @media (min-width: 768px) {

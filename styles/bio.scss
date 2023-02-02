@@ -136,7 +136,7 @@
   height: 2.25rem;
   background-color: colors.$mercury;
   object-fit: cover;
-  object-position: left;
+  object-position: center;
   border-radius: 50%;
   @include responsive.tablet {
     width: 3rem;
@@ -254,7 +254,6 @@
 
     &-main {
       flex-grow: 1;
-
       padding-left: 0.25rem;
       &-top {
         margin-bottom: 0.25rem;
