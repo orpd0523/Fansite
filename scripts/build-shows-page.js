@@ -1,4 +1,4 @@
-const BASE_URL = "http://project-1-api.herokuapp.com/";
+const BASE_URL = "https://us-central1.gcp.data.mongodb-api.com/app/fansite-qwkxw/endpoint/";
 const apikey = "?api_key=d10b7838-1997-4fb9-bf66-f0cdd4a312ba";
 const display = document.querySelector(".shows__list");
 let selected = false;
@@ -81,6 +81,7 @@ function displayConcert(concertObject) {
 }
 
 function renderShowDates(showdates) {
+  console.log(showdates)
   showdates.forEach((showdate) => {
     displayConcert(showdate);
   });
