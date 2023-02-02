@@ -53,8 +53,8 @@
   max-height: 40rem;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: bottom;
-     object-position: bottom;
+  -o-object-position: center;
+     object-position: center;
 }
 .about__cite {
   margin-top: 0;
