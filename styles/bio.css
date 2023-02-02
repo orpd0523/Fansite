@@ -15,7 +15,7 @@
 .hero {
   background-image: linear-gradient(rgba(50, 50, 50, 0.5019607843), rgba(50, 50, 50, 0.5019607843)), url("../assets/images/hero-bio.jpg");
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   max-height: 40rem;
   color: #ffffff;
 }
@@ -66,14 +66,14 @@
 }
 
 .gallery {
-  background-color: #fafafa;
+  background-color: #f2f4f3;
   padding: 1rem;
 }
 @media (min-width: 1280px) {
   .gallery {
     padding-left: 4rem;
     padding-right: 4rem;
-    background-color: #fafafa;
+    background-color: #f2f4f3;
   }
 }
 .gallery__images {
@@ -152,13 +152,13 @@
   border-radius: 0.25rem;
 }
 .comments__form-field-input:focus {
-  border: 1px solid #323232;
+  border: 1px solid #08383b;
 }
 .comments__form-field-input:invalid {
   border: 1px solid #d22d2d;
 }
 .comments__form-submit-button {
-  background-color: #323232;
+  background-color: #08383b;
   color: #ffffff;
   border: none;
   border-radius: 0.25rem;

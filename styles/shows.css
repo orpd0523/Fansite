@@ -19,7 +19,7 @@
 .hero {
   background-image: linear-gradient(rgba(50, 50, 50, 0.5019607843), rgba(50, 50, 50, 0.5019607843)), url("../assets/images/hero-shows.jpg");
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   max-height: 40rem;
   color: #ffffff;
   min-height: 16rem;
@@ -85,7 +85,7 @@
   background-color: #e1e1e1;
 }
 .shows__card:hover {
-  background-color: #fafafa;
+  background-color: #f2f4f3;
 }
 .shows__card-col-label {
   color: #afafaf;
@@ -104,7 +104,7 @@
   padding-left: 0.5rem;
 }
 .shows__card-button {
-  background-color: #323232;
+  background-color: #08383b;
   color: #ffffff;
   border: none;
   border-radius: 0.25rem;
