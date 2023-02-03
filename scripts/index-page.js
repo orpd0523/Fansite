@@ -31,6 +31,9 @@ function displayComment(commentObject) {
 
   const avatar = document.createElement("img");
   avatar.classList.add("comments__card-aside-avatar");
+  if (commentObject.userImg){
+    avatar.src = commentObject.userImg
+  }
   cardAside.appendChild(avatar);
 
   const cardMain = document.createElement("div");
