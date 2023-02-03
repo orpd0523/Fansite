@@ -78,7 +78,6 @@
 
 .gallery {
   background-color: #f2f4f3;
-  padding: 1rem;
 }
 @media (min-width: 1280px) {
   .gallery {
@@ -101,10 +100,9 @@
 }
 .gallery__image {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
   width: auto;
-  max-width: 95vw;
+  max-width: 90vw;
   height: auto;
 }
 @media (min-width: 768px) {
