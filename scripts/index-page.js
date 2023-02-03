@@ -1,5 +1,5 @@
 const BASE_URL = "https://us-central1.gcp.data.mongodb-api.com/app/fansite-qwkxw/endpoint/";
-const apikey = "?api_key=d10b7838-1997-4fb9-bf66-f0cdd4a312ba";
+const apikey = "?secret=d10b7838-1997-4fb9-bf66-f0cdd4a312ba";
 const display = document.querySelector(".comments__display");
 const commentForm = document.querySelector(".comments__form");
 let comments = [];
