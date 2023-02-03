@@ -136,6 +136,12 @@ main button,
   }
 }
 
+a.header__logo {
+  font-size: 2.5rem;
+  line-height: 2.75rem;
+  font-weight: 600;
+}
+
 @media (min-width: 768px) {
   .footer h2 {
     font-size: 2.25rem;
@@ -153,18 +159,21 @@ main button,
 
 .footer__container, .header__nav {
   max-width: 1280px;
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 .header {
-  background-color: #323232;
+  background-color: #08383b;
 }
 .header__nav {
   display: flex;
   flex-direction: column;
 }
-.header__image {
-  margin: 0.5rem auto;
+.header__logo {
+  margin: 1rem auto;
+  color: #ffffff;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px black, 0 0 25px yellow, 0 0 5px darkblue;
 }
 .header__list {
   list-style: none;
@@ -199,13 +208,13 @@ main button,
     padding: 0 2.25rem;
     gap: 2rem;
   }
-  .header__image {
+  .header__logo {
     margin: 1.5rem 0;
   }
 }
 
 .footer {
-  background-color: #323232;
+  background-color: #08383b;
   color: #ffffff;
   position: relative;
   padding-bottom: 0.5rem;
@@ -270,4 +279,4 @@ main button,
   .footer__copyright {
     margin: 1rem 2rem;
   }
-}/*# sourceMappingURL=global.css.map */
+}

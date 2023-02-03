@@ -5,7 +5,7 @@ $hero-bg: colors.$black-50;
   background-image: linear-gradient($hero-bg, $hero-bg),
     url("../assets/images/#{$image}");
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   max-height: 40rem;
   color: colors.$white;
 }

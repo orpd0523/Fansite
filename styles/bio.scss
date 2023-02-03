@@ -4,7 +4,7 @@
 
 %container {
   max-width: responsive.$desktop-breakpoint;
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 %margins {
@@ -31,12 +31,12 @@
   max-width: calc(100% - 2.25rem);
 }
 
-%about-element{
+%about-element {
   margin-left: auto;
   margin-right: auto;
   max-width: 95vw;
 }
-%about-text{
+%about-text {
   display: block;
 }
 
@@ -45,12 +45,12 @@
   @extend %container;
   @extend %margins;
 
-  &__article{
+  &__article {
     display: block;
     margin-left: 4rem;
     margin-right: 4rem;
     max-width: 95vw;
-    &-text{
+    &-text {
       margin: 0;
       padding: 0;
       display: flex;
@@ -58,17 +58,26 @@
       gap: 1rem;
     }
   }
+    &__direction {
+      margin: 0;
+      padding: 0;
+      font-size: xx-small;
+      display: flex;
+      justify-content: start;
+      color: rgba(0, 0, 0, 0.363);
+    }
 
   &__image {
     width: 100%;
     height: auto;
-    max-height:40rem;
+    max-height: 40rem;
     object-fit: cover;
-    object-position: bottom;
+    object-position: center;
   }
 
   &__quote {
     @extend %about-text;
+    margin-top: 1rem;
   }
 
   &__cite {
@@ -94,10 +103,11 @@
   background-color: colors.$alabaster;
   padding: 1rem;
 
-  &__container{
+  &__container {
     @extend %container;
     @extend %margins;
   }
+
 
   @include responsive.desktop {
     padding-left: 4rem;
@@ -136,7 +146,7 @@
   height: 2.25rem;
   background-color: colors.$mercury;
   object-fit: cover;
-  object-position: left;
+  object-position: center;
   border-radius: 50%;
   @include responsive.tablet {
     width: 3rem;
@@ -254,7 +264,6 @@
 
     &-main {
       flex-grow: 1;
-
       padding-left: 0.25rem;
       &-top {
         margin-bottom: 0.25rem;
